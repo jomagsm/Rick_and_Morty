@@ -32,5 +32,8 @@ createCharacters() {
       'Мужской', 'assets/images/characters/albert.png'));
   characters.addCharacter(Character('Аллан', 'Райлс', 'Мертвый', 'Человек',
       'Мужской', 'assets/images/characters/alan.png'));
+  characters.addCharacter(Character('Аллан', 'Райлс', 'Мертвый', 'Человек',
+      'Мужской', 'assets/images/characters/alan.png'));
+
   return characters.characters;
 }

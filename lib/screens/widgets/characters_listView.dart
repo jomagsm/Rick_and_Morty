@@ -18,6 +18,7 @@ class _CharactersListViewState extends State<CharactersListView> {
   Widget build(BuildContext context) {
     return Container(
         child: ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: charactersList.length,

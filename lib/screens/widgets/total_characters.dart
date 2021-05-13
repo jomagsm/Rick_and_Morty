@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
-import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class TotalCharactersContainer extends StatefulWidget {
   final List charactersList;
-  TotalCharactersContainer({Key key, @required this.charactersList})
+  final String replaceIcon;
+  TotalCharactersContainer(
+      {Key key, @required this.charactersList, this.replaceIcon})
       : super(key: key);
 
   @override
   _TotalCharactersContainerState createState() =>
-      _TotalCharactersContainerState(charactersList);
+      _TotalCharactersContainerState(charactersList, replaceIcon);
 }
 
 class _TotalCharactersContainerState extends State<TotalCharactersContainer> {
   List charactersList;
-  _TotalCharactersContainerState(this.charactersList);
+  String replaceIcon;
+  _TotalCharactersContainerState(this.charactersList, this.replaceIcon);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +36,7 @@ class _TotalCharactersContainerState extends State<TotalCharactersContainer> {
             child: Container(
               margin: EdgeInsets.only(right: 20),
               child: SvgPicture.asset(
-                SvgIcons.largeIcons,
+                replaceIcon,
               ),
             ),
           ),

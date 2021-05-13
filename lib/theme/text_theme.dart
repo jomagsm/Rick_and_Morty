@@ -11,12 +11,12 @@ class TextThemes {
       fontWeight: FontWeight.w500,
       color: ColorTheme.totalCharacters,
       letterSpacing: 1.5);
-  static var textAppearanceOverline = TextStyle(
+  static var characterStatus = TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverline,
       letterSpacing: 1.5);
-  static var textAppearanceOverlineDead = TextStyle(
+  static var characterStatusDead = TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverlineDead,
@@ -26,6 +26,11 @@ class TextThemes {
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverlineFullName,
       letterSpacing: 0.5);
+  static var fullNameBigCard = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.1);
   static var textAppearanceCaption = TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w400,
@@ -41,12 +46,17 @@ class TextThemes {
       fontWeight: FontWeight.w400,
       color: ColorTheme.textAppearanceCaptionBottomGrey,
       letterSpacing: 0.5);
+  static var statusBigCard = TextStyle(
+      fontSize: 10,
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.textAppearanceCaptionBottomGreen,
+      letterSpacing: 1.5);
 }
 
 getTextTheme(status) {
-  if (status == 'Живой') {
-    return TextThemes.textAppearanceOverline;
+  if (status.toLowerCase() == 'живой') {
+    return TextThemes.characterStatus;
   } else {
-    return TextThemes.textAppearanceOverlineDead;
+    return TextThemes.characterStatusDead;
   }
 }
