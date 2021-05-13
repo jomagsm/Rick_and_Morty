@@ -21,6 +21,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-
+    "appBarHintText" : MessageLookupByLibrary.simpleMessage("Найти персонажа"),
+    "human" : MessageLookupByLibrary.simpleMessage("Человек"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Настройки"),
+    "textAppearanceCaptionCharacters" : MessageLookupByLibrary.simpleMessage("Персонажи"),
+    "textAppearanceCaptionEpisode" : MessageLookupByLibrary.simpleMessage("Эпизоды"),
+    "textAppearanceCaptionLocation" : MessageLookupByLibrary.simpleMessage("Локациии"),
+    "totalCharacters" : MessageLookupByLibrary.simpleMessage("Всего персонажей:")
   };
 }

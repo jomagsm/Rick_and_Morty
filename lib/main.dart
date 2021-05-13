@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rick_and_morty/screens/characters_list/characters_list.dart';
 import 'package:rick_and_morty/screens/loading/loading_page.dart';
 
 import 'generated/l10n.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoadingPage(),
+      // home: LoadingPage(),
+      home: CharactersList(),
     );
   }
 }

@@ -35,7 +35,75 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Найти персонажа`
+  String get appBarHintText {
+    return Intl.message(
+      'Найти персонажа',
+      name: 'appBarHintText',
+      desc: '',
+      args: [],
+    );
+  }
 
+  /// `Всего персонажей:`
+  String get totalCharacters {
+    return Intl.message(
+      'Всего персонажей:',
+      name: 'totalCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Человек`
+  String get human {
+    return Intl.message(
+      'Человек',
+      name: 'human',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Персонажи`
+  String get textAppearanceCaptionCharacters {
+    return Intl.message(
+      'Персонажи',
+      name: 'textAppearanceCaptionCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Локациии`
+  String get textAppearanceCaptionLocation {
+    return Intl.message(
+      'Локациии',
+      name: 'textAppearanceCaptionLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Эпизоды`
+  String get textAppearanceCaptionEpisode {
+    return Intl.message(
+      'Эпизоды',
+      name: 'textAppearanceCaptionEpisode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Настройки`
+  String get settings {
+    return Intl.message(
+      'Настройки',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

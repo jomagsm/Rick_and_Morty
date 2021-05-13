@@ -1,1 +1,9 @@
-{}
+{
+    "appBarHintText": "Найти персонажа",
+    "totalCharacters": "Всего персонажей:",
+    "human": "Человек",
+    "textAppearanceCaptionCharacters": "Персонажи",
+    "textAppearanceCaptionLocation": "Локациии",
+    "textAppearanceCaptionEpisode": "Эпизоды",
+    "settings": "Настройки"
+}
