@@ -22,7 +22,7 @@ class _TotalCharactersContainerState extends State<TotalCharactersContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20, left: 16, right: 15),
+      margin: EdgeInsets.only(top: 24, left: 16, right: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -33,6 +33,9 @@ class _TotalCharactersContainerState extends State<TotalCharactersContainer> {
                 style: TextThemes.totalCharacters),
           ),
           InkWell(
+            onTap: () {
+              print('dfgdfg');
+            },
             child: Container(
               margin: EdgeInsets.only(right: 20),
               child: SvgPicture.asset(
