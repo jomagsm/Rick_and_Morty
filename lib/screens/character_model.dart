@@ -9,7 +9,7 @@ class Character {
   String avatar = '';
   Object place;
   String description;
-  var pk;
+  int pk;
 
   static int count = 0;
   Character(
@@ -37,6 +37,14 @@ class Characters {
 
   addCharacter(character) {
     this.characters.add(character);
+  }
+}
+
+getCharacter(List characktersList, pk) {
+  for (final i in characktersList) {
+    if (i.pk == pk) {
+      return i;
+    }
   }
 }
 

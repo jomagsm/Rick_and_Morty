@@ -13,11 +13,13 @@ class TextThemes {
       letterSpacing: 1.5);
   static var characterStatus = TextStyle(
       fontSize: 10,
+      height: getTextHeight(10, 16),
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverline,
       letterSpacing: 1.5);
   static var characterStatusDead = TextStyle(
       fontSize: 10,
+      height: getTextHeight(10, 16),
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverlineDead,
       letterSpacing: 1.5);
@@ -51,6 +53,20 @@ class TextThemes {
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceCaptionBottomGreen,
       letterSpacing: 1.5);
+
+  static var textAppearanceHeadline4 = TextStyle(
+      fontSize: 34,
+      height: getTextHeight(34, 40),
+      fontWeight: FontWeight.w400,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.5);
+
+  static var profileDescriptionStyle = TextStyle(
+      fontSize: 13,
+      height: getTextHeight(13, 19.5),
+      fontWeight: FontWeight.w400,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.5);
 }
 
 getTextTheme(status) {

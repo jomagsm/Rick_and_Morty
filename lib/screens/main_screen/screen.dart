@@ -3,10 +3,11 @@ import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/app_bar/total_characters.dart';
 import 'package:rick_and_morty/components/bottomAppBar.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
-import 'package:rick_and_morty/screens/character_model.dart';
 import 'package:rick_and_morty/screens/main_screen/widgets/characters_grid_view.dart';
 import 'package:rick_and_morty/screens/main_screen/widgets/characters_listView.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
+
+import 'package:rick_and_morty/global/global.dart' as globals;
 
 class MainScreenApp extends StatefulWidget {
   MainScreenApp({Key key}) : super(key: key);
@@ -16,7 +17,7 @@ class MainScreenApp extends StatefulWidget {
 }
 
 class _MainScreenAppState extends State<MainScreenApp> {
-  final charactersList = createCharacters();
+  final charactersList = globals.globalcharactersList;
   bool smallCard = true;
   @override
   Widget build(BuildContext context) {
