@@ -60,3 +60,7 @@ getTextTheme(status) {
     return TextThemes.characterStatusDead;
   }
 }
+
+getTextHeight(double size, double height) {
+  return height / size;
+}
