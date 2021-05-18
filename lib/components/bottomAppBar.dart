@@ -4,7 +4,7 @@ import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
-import '../../components/frequent.dart';
+import 'frequent.dart';
 
 class BottomAppBarCustom extends StatelessWidget {
   const BottomAppBarCustom({Key key}) : super(key: key);

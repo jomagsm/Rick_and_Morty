@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/resources/loading_page_images.dart';
+import 'package:rick_and_morty/resources/images.dart';
 
 class LoadingPage extends StatelessWidget {
   const LoadingPage({Key key}) : super(key: key);
