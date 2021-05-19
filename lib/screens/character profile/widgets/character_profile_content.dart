@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/screens/character%20profile/widgets/episode_list_view.dart';
+import 'package:rick_and_morty/screens/character%20profile/widgets/utils.dart';
 import 'package:rick_and_morty/screens/models/character_model.dart';
 import 'package:rick_and_morty/screens/models/planet_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
@@ -48,73 +49,22 @@ class CharacterProfileContent extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 120),
-                    child: Column(
-                      children: [
-                        Text(S.of(context).gender,
-                            style: TextThemes.profileRowTitle),
-                        Text(
-                          "${character.gender}",
-                          style: TextThemes.profileRowContent,
-                        ),
-                      ],
-                    ),
+                    child: getColumTitleContent(
+                        S.of(context).gender, "${character.gender}"),
                   ),
-                  Column(
-                    children: [
-                      Text(S.of(context).race,
-                          style: TextThemes.profileRowTitle),
-                      Text(
-                        "${character.race}",
-                        style: TextThemes.profileRowContent,
-                      ),
-                    ],
-                  ),
+                  getColumTitleContent(S.of(context).race, "${character.race}"),
                 ],
               ),
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(S.of(context).place,
-                          style: TextThemes.profileRowTitle),
-                      Text(
-                        "${place.name} ${place.measuring}",
-                        style: TextThemes.profileRowContent,
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                      color: ColorTheme.textAppearanceOverlineFullName,
-                      icon: Icon(Icons.navigate_next),
-                      onPressed: () {})
-                ],
-              ),
+              getRowTitleContent(S.of(context).place, "${place.name}",
+                  "${place.measuring}", () {}),
               SizedBox(
                 height: 24,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(S.of(context).location,
-                          style: TextThemes.profileRowTitle),
-                      Text(
-                        "${place.name} ${place.measuring}",
-                        style: TextThemes.profileRowContent,
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                      color: ColorTheme.textAppearanceOverlineFullName,
-                      icon: Icon(Icons.navigate_next),
-                      onPressed: () {})
-                ],
-              ),
+              getRowTitleContent(
+                  S.of(context).location, place.name, place.measuring, () {}),
               SizedBox(
                 height: 36,
               ),
