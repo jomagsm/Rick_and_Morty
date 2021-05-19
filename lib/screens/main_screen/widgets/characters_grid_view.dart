@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/character%20profile/screen.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
@@ -30,12 +31,16 @@ class _CharactersGridViewState extends State<CharactersGridView> {
             return InkWell(
               onTap: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        CharacterProfile(id: charactersList[index].id),
-                  ),
-                );
+                    context,
+                    SlideRightRoute(
+                        page: CharacterProfile(id: charactersList[index].id)));
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) =>
+                //         CharacterProfile(id: charactersList[index].id),
+                //   ),
+                // );
               },
               child: Column(
                 children: [
