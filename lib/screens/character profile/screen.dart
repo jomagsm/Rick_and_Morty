@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/global/global.dart';
-import 'package:rick_and_morty/resources/svg_icons.dart';
-import 'package:rick_and_morty/screens/character_model.dart';
-import 'package:rick_and_morty/screens/widgets/planet_model.dart';
+import 'package:rick_and_morty/screens/character%20profile/widgets/character_profile_content.dart';
+import 'package:rick_and_morty/screens/models/character_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
-import 'package:rick_and_morty/theme/text_theme.dart';
+import 'package:rick_and_morty/screens/models/planet_model.dart';
 
 class CharacterProfile extends StatefulWidget {
-  CharacterProfile({Key key}) : super(key: key);
+  final int id;
+  CharacterProfile({Key key, @required this.id}) : super(key: key);
 
   @override
   _CharacterProfileState createState() => _CharacterProfileState();
 }
 
 class _CharacterProfileState extends State<CharacterProfile> {
-  final character = Character(
-      'Рик',
-      'Санчез',
-      'Живой',
-      'Человек',
-      'Мужской',
-      'assets/images/characters/rick.png',
-      Planet('Земля', 'Мир', 'C-137'),
-      'Главный протагонист мультсериала «Рик и Морти». Безумный ученый, чей алкоголизм, безрассудность и социопатия заставляют беспокоиться семью его дочери.');
+  Character character;
+
+  @override
+  void initState() {
+    character = getCharacter(globalcharactersList, widget.id);
+    print(character);
+    super.initState();
+  }
+
+  final List charactersList = globalcharactersList;
+  final episodes = globalEpisodeList;
+  final Planet place = globalPlace;
+
+  final sizebox36 = SizedBox(
+    height: 36,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorTheme.background,
       body: Stack(
         children: [
           Positioned(
@@ -44,45 +53,25 @@ class _CharacterProfileState extends State<CharacterProfile> {
             left: 24,
             child: Container(
                 alignment: Alignment.center,
-                child: new SizedBox(
+                child: SizedBox(
                     child: FloatingActionButton(
-                  backgroundColor: ColorTheme.appBarBackground,
-                  child: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    print("Cliked");
-                  },
-                ))),
+                        backgroundColor: ColorTheme.appBarBackground,
+                        child: Icon(Icons.arrow_back),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        }))),
+          ),
+          CharacterProfileContent(
+            character: character,
+            place: place,
           ),
           Positioned(
-            top: 218,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              width: MediaQuery.of(context).size.width,
-              color: ColorTheme.background,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 90,
-                  ),
-                  Text(
-                    '${character.firstName} ${character.lastName}',
-                    style: TextThemes.textAppearanceHeadline4,
-                  ),
-                  Text(
-                    '${character.status.toUpperCase()}',
-                    style: getTextTheme(character.status),
-                  ),
-                  SizedBox(
-                    height: 36,
-                  ),
-                  Text(
-                    '${character.description}',
-                    style: TextThemes.profileDescriptionStyle,
-                  ),
-                ],
-              ),
-            ),
-          ),
+              top: 218,
+              child: Container(
+                color: ColorTheme.background,
+                height: 65,
+                width: MediaQuery.of(context).size.height,
+              )),
           Positioned(
             top: 138,
             left: 123,

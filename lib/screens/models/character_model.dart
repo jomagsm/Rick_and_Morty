@@ -1,33 +1,35 @@
-import 'package:rick_and_morty/screens/widgets/planet_model.dart';
+import 'package:rick_and_morty/screens/models/planet_model.dart';
 
 class Character {
   String firstName = '';
   String lastName = '';
   String status = '';
   String race = 'Человек';
-  String genus = '';
+  String gender = '';
   String avatar = '';
-  Object place;
+  int placeId;
   String description;
-  int pk;
+  int locationId;
+  int id;
 
   static int count = 0;
-  Character(
-      firstName, lastName, status, race, genus, avatar, place, description) {
+  Character(firstName, lastName, status, race, gender, avatar, placeId,
+      description, locationId) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.status = status;
     this.race = race;
-    this.genus = genus;
+    this.gender = gender;
     this.avatar = avatar;
-    this.place = place;
+    this.placeId = placeId;
     this.description = description;
+    this.locationId = locationId;
     ++count;
-    this.pk = count;
+    this.id = count;
   }
 
-  getPk() {
-    return pk;
+  getId() {
+    return this.id;
   }
 }
 
@@ -40,9 +42,9 @@ class Characters {
   }
 }
 
-getCharacter(List characktersList, pk) {
+getCharacter(List characktersList, id) {
   for (final i in characktersList) {
-    if (i.pk == pk) {
+    if (i.id == id) {
       return i;
     }
   }
@@ -56,22 +58,22 @@ createFixtures() {
   String mortiSmitDes =
       'Мортимер «Морти» Смит-старший (англ. Morty Smith) — является одним из двух главных героев сериала. Приходится внуком Рику и часто вынужден ходить по пятам на его различных «злоключениях». Морти посещает школу имени Гарри Герпсона вместе со своей сестрой Саммер. Влюблен в Джессику.';
 
-  var earth = Planet('Земля', 'Мир', 'C-137');
+  // var earth = Planet('Земля', 'Мир', 'C-137');
   var characters = Characters([]);
   characters.addCharacter(Character('Рик', 'Санчез', 'Живой', 'Человек',
-      'Мужской', 'assets/images/characters/rick.png', earth, rickDes));
+      'Мужской', 'assets/images/characters/rick.png', 1, rickDes, 1));
   characters.addCharacter(Character('Директор', 'Агенства', 'Живой', 'Человек',
-      'Мужской', 'assets/images/characters/director.png', earth, dirAgent));
+      'Мужской', 'assets/images/characters/director.png', 1, dirAgent, 1));
   characters.addCharacter(Character('Морти', 'Смит', 'Живой', 'Человек',
-      'Мужской', 'assets/images/characters/smit.png', earth, mortiSmitDes));
+      'Мужской', 'assets/images/characters/smit.png', 1, mortiSmitDes, 1));
   characters.addCharacter(Character('Саммер', 'Смит', 'Живой', 'Человек',
-      'Женский', 'assets/images/characters/sammer.png', earth, rickDes));
+      'Женский', 'assets/images/characters/sammer.png', 1, rickDes, 1));
   characters.addCharacter(Character('Альберт', 'Энштейн', 'Мертвый', 'Человек',
-      'Мужской', 'assets/images/characters/albert.png', earth, rickDes));
+      'Мужской', 'assets/images/characters/albert.png', 1, rickDes, 1));
   characters.addCharacter(Character('Аллан', 'Райлс', 'Мертвый', 'Человек',
-      'Мужской', 'assets/images/characters/alan.png', earth, dirAgent));
+      'Мужской', 'assets/images/characters/alan.png', 1, dirAgent, 1));
   characters.addCharacter(Character('Аллан', 'Райлс', 'Мертвый', 'Человек',
-      'Мужской', 'assets/images/characters/alan.png', earth, dirAgent));
+      'Мужской', 'assets/images/characters/alan.png', 1, dirAgent, 1));
 
   return characters.characters;
 }

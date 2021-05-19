@@ -12,4 +12,7 @@ class ColorTheme {
   static var bottomAppBar = Color(0xFF152A3A);
   static var textAppearanceCaptionBottomGreen = Color(0xFF43D049);
   static var textAppearanceCaptionBottomGrey = Color(0xFF5B6975);
+  static var episodeSeriaStyleColor = Color.fromRGBO(34, 162, 189, 0.87);
+  static var episodeDateStyleColor = Color(0xff6E798C99);
+  static var profileDivenderColor = Color.fromRGBO(21, 42, 58, 1);
 }

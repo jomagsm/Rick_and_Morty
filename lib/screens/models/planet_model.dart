@@ -2,7 +2,7 @@ class Planet {
   String name;
   String world;
   String measuring;
-  int pk;
+  int id;
 
   static int count = 0;
   Planet(name, world, measuring) {
@@ -10,10 +10,13 @@ class Planet {
     this.world = world;
     this.measuring = measuring;
     ++count;
-    this.pk = count;
+    this.id = count;
+  }
+  getNameMeasuring() {
+    return "${this.name} ${this.measuring}";
   }
 
   getPk() {
-    return pk;
+    return this.id;
   }
 }

@@ -2,8 +2,14 @@
     "appBarHintText": "Найти персонажа",
     "totalCharacters": "Всего персонажей:",
     "human": "Человек",
+    "gender": "Пол",
     "textAppearanceCaptionCharacters": "Персонажи",
     "textAppearanceCaptionLocation": "Локациии",
     "textAppearanceCaptionEpisode": "Эпизоды",
-    "settings": "Настройки"
+    "textAppearanceCaptionEpisodeAll":"Все эпизоды",
+    "settings": "Настройки",
+    "race": "Расса",
+    "place": "Место рождения",
+    "location": "Местоположение",
+    "seria":"Серия"
 }

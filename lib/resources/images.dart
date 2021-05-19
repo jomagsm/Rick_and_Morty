@@ -15,4 +15,7 @@ class LoadingPageMedia {
       AssetImage('assets/images/loading_screen/Слой 0 копия 2 2-1.png');
   static var backgroundLayout2 =
       AssetImage('assets/images/loading_screen/Rectangle 7.png');
+  // static var episode1 = AssetImage('assets/images/characters/episode1.png');
+  // static var episode2 = AssetImage('assets/images/characters/episode2.png');
+  // static var episode3 = AssetImage('assets/images/characters/episode3.png');
 }

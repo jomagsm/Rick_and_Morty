@@ -65,6 +65,16 @@ class S {
     );
   }
 
+  /// `Пол`
+  String get gender {
+    return Intl.message(
+      'Пол',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Персонажи`
   String get textAppearanceCaptionCharacters {
     return Intl.message(
@@ -95,11 +105,61 @@ class S {
     );
   }
 
+  /// `Все эпизоды`
+  String get textAppearanceCaptionEpisodeAll {
+    return Intl.message(
+      'Все эпизоды',
+      name: 'textAppearanceCaptionEpisodeAll',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Настройки`
   String get settings {
     return Intl.message(
       'Настройки',
       name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Расса`
+  String get race {
+    return Intl.message(
+      'Расса',
+      name: 'race',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Место рождения`
+  String get place {
+    return Intl.message(
+      'Место рождения',
+      name: 'place',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Местоположение`
+  String get location {
+    return Intl.message(
+      'Местоположение',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Серия`
+  String get seria {
+    return Intl.message(
+      'Серия',
+      name: 'seria',
       desc: '',
       args: [],
     );

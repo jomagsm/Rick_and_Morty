@@ -25,6 +25,7 @@ class TextThemes {
       letterSpacing: 1.5);
   static var textAppearanceOverlineFullName = TextStyle(
       fontSize: 16,
+      height: getTextHeight(16, 24),
       fontWeight: FontWeight.w500,
       color: ColorTheme.textAppearanceOverlineFullName,
       letterSpacing: 0.5);
@@ -67,6 +68,38 @@ class TextThemes {
       fontWeight: FontWeight.w400,
       color: ColorTheme.textAppearanceOverlineFullName,
       letterSpacing: 0.5);
+
+  static var profileRowTitle = TextStyle(
+      fontSize: 12,
+      height: getTextHeight(12, 16),
+      fontWeight: FontWeight.w400,
+      color: ColorTheme.totalCharacters,
+      letterSpacing: 0.5);
+  static var profileRowContent = TextStyle(
+      fontSize: 14,
+      height: getTextHeight(14, 20),
+      fontWeight: FontWeight.w400,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.25);
+  static var profileListTitle = TextStyle(
+      fontSize: 20,
+      height: getTextHeight(20, 28),
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.15);
+
+  static var overline = TextStyle(
+      fontSize: 10,
+      height: getTextHeight(10, 16),
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.episodeSeriaStyleColor,
+      letterSpacing: 1.5);
+  static var profileEpisodeDate = TextStyle(
+      fontSize: 14,
+      height: getTextHeight(14, 20),
+      fontWeight: FontWeight.w400,
+      color: ColorTheme.episodeDateStyleColor,
+      letterSpacing: 0.25);
 }
 
 getTextTheme(status) {
