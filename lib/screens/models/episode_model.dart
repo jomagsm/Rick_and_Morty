@@ -1,5 +1,3 @@
-import 'package:rick_and_morty/resources/images.dart';
-
 class EpisodeApp {
   int seriesNum;
   String name;
