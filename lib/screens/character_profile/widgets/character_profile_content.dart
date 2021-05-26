@@ -42,7 +42,7 @@ class CharacterProfileContent extends StatelessWidget {
               '${character.description}',
               style: TextThemes.profileDescriptionStyle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             Row(
@@ -60,7 +60,7 @@ class CharacterProfileContent extends StatelessWidget {
             ),
             getRowTitleContent(S.of(context).place, "${place.name}",
                 "${place.measuring}", () {}),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             getRowTitleContent(

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rick_and_morty/global/global.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
-import 'package:rick_and_morty/screens/character_profile/widgets/arow_back_icon_button.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/character_profile_content.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/circle_avatar.dart';
