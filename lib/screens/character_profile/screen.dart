@@ -32,13 +32,11 @@ class CharacterProfile extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                           elevation: 0,
                           leading: Container(
-                            margin: const EdgeInsets.only(left: 24),
+                            margin: const EdgeInsets.only(left: 10),
                             child: FloatingActionButton(
                                 backgroundColor: ColorTheme.appBarBackground,
                                 child: SvgPicture.asset(
                                   SvgIcons.arowBack,
-                                  width: 14,
-                                  height: 10,
                                 ),
                                 onPressed: () {
                                   Navigator.pop(context);
