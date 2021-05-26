@@ -23,7 +23,7 @@ class CharacterProfile extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-                orElse: () => Text("dsadsa"),
+                orElse: () => CircularProgressIndicator(),
                 loadInProgress: (_) => CircularProgressIndicator(),
                 data: (_data) => Scaffold(
                       backgroundColor: ColorTheme.background,

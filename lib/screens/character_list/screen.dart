@@ -21,7 +21,7 @@ class CharactersScreen extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-                orElse: () => Text("dsadsa"),
+                orElse: () => CircularProgressIndicator(),
                 loading: (_) => CircularProgressIndicator(),
                 data: (_data) => Scaffold(
                       appBar: AppBar(
