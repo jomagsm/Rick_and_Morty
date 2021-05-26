@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/global/navigator.dart';
-import 'package:rick_and_morty/screens/character%20profile/screen.dart';
+import 'package:rick_and_morty/screens/character_profile/screen.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class CharactersListView extends StatefulWidget {

@@ -32,7 +32,7 @@ class Character {
 }
 
 class Characters {
-  var characters = [];
+  List<Character> characters = [];
   Characters(this.characters);
 
   addCharacter(character) {
@@ -40,15 +40,16 @@ class Characters {
   }
 }
 
-getCharacter(List characktersList, id) {
+Character getCharacter(List<Character> characktersList, id) {
   for (final i in characktersList) {
     if (i.id == id) {
       return i;
     }
   }
+  return characktersList.first;
 }
 
-createFixtures() {
+List<Character> createFixtures() {
   String rickDes =
       'Главный протагонист мультсериала «Рик и Морти». Безумный ученый, чей алкоголизм, безрассудность и социопатия заставляют беспокоиться семью его дочери.';
   String dirAgent =
@@ -61,7 +62,7 @@ createFixtures() {
       "Алан Райлс (англю. Alan Rails) — член команды виндикаторов, который появился в серии «Виндикаторы 3: Возвращение концесветника». Смерть родителей Алана в железнодорожной катастрофе дала ему суперспособность — вызывать поезда-призраки. Алан был женат на Супернове.";
 
   // var earth = Planet('Земля', 'Мир', 'C-137');
-  var characters = Characters([]);
+  Characters characters = Characters([]);
   characters.addCharacter(Character('Рик', 'Санчез', 'Живой', 'Человек',
       'Мужской', 'assets/images/characters/rick.png', 1, rickDes, 1));
   characters.addCharacter(Character('Директор', 'Агенства', 'Живой', 'Человек',
