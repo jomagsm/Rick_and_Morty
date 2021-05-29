@@ -77,6 +77,10 @@ List<Character> createFixtures() {
       'Мужской', 'assets/images/characters/alan.png', 1, allanDes, 1));
   characters.addCharacter(Character('Аллан', 'Райлс', 'Мертвый', 'Человек',
       'Мужской', 'assets/images/characters/alan.png', 1, allanDes, 1));
+  characters.addCharacter(Character('Рик', 'Санчез', 'Живой', 'Человек',
+      'Мужской', 'assets/images/characters/rick.png', 1, rickDes, 1));
+  characters.addCharacter(Character('Рик', 'Санчез', 'Живой', 'Человек',
+      'Мужской', 'assets/images/characters/rick.png', 1, rickDes, 1));
 
   return characters.characters;
 }

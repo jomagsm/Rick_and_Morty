@@ -11,9 +11,7 @@ class CharactersListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+    return ListView.builder(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: charactersList.length,
@@ -63,6 +61,6 @@ class CharactersListView extends StatelessWidget {
           ),
         );
       },
-    ));
+    );
   }
 }
