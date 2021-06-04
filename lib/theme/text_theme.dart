@@ -42,6 +42,7 @@ class TextThemes {
       letterSpacing: 0.1);
   static var textAppearanceCaption = TextStyle(
       fontSize: 12,
+      height: getTextHeight(12, 16),
       fontWeight: FontWeight.w400,
       color: ColorTheme.textAppearanceCaption,
       letterSpacing: 0.5);
