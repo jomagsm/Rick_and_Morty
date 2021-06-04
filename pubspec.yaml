@@ -57,6 +57,7 @@ flutter:
     - assets/images/loading_screen/
     - assets/svg_icons/
     - assets/images/characters/
+    - assets/images/location/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

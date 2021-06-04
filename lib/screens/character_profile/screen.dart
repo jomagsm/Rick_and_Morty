@@ -6,7 +6,7 @@ import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/character_profile_content.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/circle_avatar.dart';
-import 'package:rick_and_morty/screens/models/planet_model.dart';
+import 'package:rick_and_morty/screens/models/location_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
 import 'bloc/characterProfile_bloc.dart';
@@ -14,7 +14,7 @@ import 'bloc/characterProfile_bloc.dart';
 class CharacterProfile extends StatelessWidget {
   final int id;
   CharacterProfile({Key key, this.id}) : super(key: key);
-  final Planet place = globalPlace;
+  // final Planet place = globalPlace;
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CharacterProfileBloc>(
@@ -49,7 +49,7 @@ class CharacterProfile extends StatelessWidget {
                             BigImagePosition(character: _data.character),
                             CharacterProfileContent(
                               character: _data.character,
-                              place: place,
+                              location: _data.location,
                             ),
                             Positioned(
                                 top: 218,

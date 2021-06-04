@@ -14,9 +14,11 @@ class _$CharacterProfileStateTearOff {
   const _$CharacterProfileStateTearOff();
 
 // ignore: unused_element
-  _CharacterProfileState data({@required Character character}) {
+  _CharacterProfileState data(
+      {@required Character character, @required Location location}) {
     return _CharacterProfileState(
       character: character,
+      location: location,
     );
   }
 
@@ -44,14 +46,14 @@ const $CharacterProfileState = _$CharacterProfileStateTearOff();
 mixin _$CharacterProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character),
+    @required TResult data(Character character, Location location),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character),
+    TResult data(Character character, Location location),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -96,7 +98,7 @@ abstract class _$CharacterProfileStateCopyWith<$Res> {
   factory _$CharacterProfileStateCopyWith(_CharacterProfileState value,
           $Res Function(_CharacterProfileState) then) =
       __$CharacterProfileStateCopyWithImpl<$Res>;
-  $Res call({Character character});
+  $Res call({Character character, Location location});
 }
 
 /// @nodoc
@@ -113,27 +115,33 @@ class __$CharacterProfileStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object character = freezed,
+    Object location = freezed,
   }) {
     return _then(_CharacterProfileState(
       character:
           character == freezed ? _value.character : character as Character,
+      location: location == freezed ? _value.location : location as Location,
     ));
   }
 }
 
 /// @nodoc
 class _$_CharacterProfileState implements _CharacterProfileState {
-  const _$_CharacterProfileState({@required this.character})
-      : assert(character != null);
+  const _$_CharacterProfileState(
+      {@required this.character, @required this.location})
+      : assert(character != null),
+        assert(location != null);
 
   @override
 
   /// Параметры
   final Character character;
+  @override
+  final Location location;
 
   @override
   String toString() {
-    return 'CharacterProfileState.data(character: $character)';
+    return 'CharacterProfileState.data(character: $character, location: $location)';
   }
 
   @override
@@ -142,12 +150,17 @@ class _$_CharacterProfileState implements _CharacterProfileState {
         (other is _CharacterProfileState &&
             (identical(other.character, character) ||
                 const DeepCollectionEquality()
-                    .equals(other.character, character)));
+                    .equals(other.character, character)) &&
+            (identical(other.location, location) ||
+                const DeepCollectionEquality()
+                    .equals(other.location, location)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(character);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(character) ^
+      const DeepCollectionEquality().hash(location);
 
   @JsonKey(ignore: true)
   @override
@@ -158,7 +171,7 @@ class _$_CharacterProfileState implements _CharacterProfileState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character),
+    @required TResult data(Character character, Location location),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -167,13 +180,13 @@ class _$_CharacterProfileState implements _CharacterProfileState {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadFailure != null);
-    return data(character);
+    return data(character, location);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character),
+    TResult data(Character character, Location location),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -181,7 +194,7 @@ class _$_CharacterProfileState implements _CharacterProfileState {
   }) {
     assert(orElse != null);
     if (data != null) {
-      return data(character);
+      return data(character, location);
     }
     return orElse();
   }
@@ -219,11 +232,13 @@ class _$_CharacterProfileState implements _CharacterProfileState {
 }
 
 abstract class _CharacterProfileState implements CharacterProfileState {
-  const factory _CharacterProfileState({@required Character character}) =
-      _$_CharacterProfileState;
+  const factory _CharacterProfileState(
+      {@required Character character,
+      @required Location location}) = _$_CharacterProfileState;
 
   /// Параметры
   Character get character;
+  Location get location;
   @JsonKey(ignore: true)
   _$CharacterProfileStateCopyWith<_CharacterProfileState> get copyWith;
 }
@@ -265,7 +280,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character),
+    @required TResult data(Character character, Location location),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -280,7 +295,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character),
+    TResult data(Character character, Location location),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -368,7 +383,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character),
+    @required TResult data(Character character, Location location),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -383,7 +398,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character),
+    TResult data(Character character, Location location),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -471,7 +486,7 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character),
+    @required TResult data(Character character, Location location),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -486,7 +501,7 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character),
+    TResult data(Character character, Location location),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/utils.dart';
 import 'package:rick_and_morty/screens/models/character_model.dart';
-import 'package:rick_and_morty/screens/models/planet_model.dart';
+import 'package:rick_and_morty/screens/models/location_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
@@ -10,8 +10,9 @@ import 'episode_list_view.dart';
 
 class CharacterProfileContent extends StatelessWidget {
   final Character character;
-  final Planet place;
-  const CharacterProfileContent({Key key, @required this.character, this.place})
+  final Location location;
+  const CharacterProfileContent(
+      {Key key, @required this.character, this.location})
       : super(key: key);
 
   @override
@@ -58,13 +59,11 @@ class CharacterProfileContent extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            getRowTitleContent(S.of(context).place, "${place.name}",
-                "${place.measuring}", () {}),
+            getRowTitleContent(S.of(context).place, "${location.name}", () {}),
             const SizedBox(
               height: 24,
             ),
-            getRowTitleContent(
-                S.of(context).location, place.name, place.measuring, () {}),
+            getRowTitleContent(S.of(context).location, location.name, () {}),
             SizedBox(
               height: 36,
             ),

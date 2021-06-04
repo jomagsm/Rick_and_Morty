@@ -15,7 +15,7 @@ getColumTitleContent(title, content) {
   );
 }
 
-getRowTitleContent(title, contentFirst, contentSecond, onPressed) {
+getRowTitleContent(title, contentFirst, onPressed) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -24,7 +24,7 @@ getRowTitleContent(title, contentFirst, contentSecond, onPressed) {
         children: [
           Text(title, style: TextThemes.profileRowTitle),
           Text(
-            "$contentFirst $contentSecond",
+            "$contentFirst",
             style: TextThemes.profileRowContent,
           ),
         ],

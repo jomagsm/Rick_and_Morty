@@ -66,9 +66,9 @@ List<Character> createFixtures() {
   characters.addCharacter(Character('Рик', 'Санчез', 'Живой', 'Человек',
       'Мужской', 'assets/images/characters/rick.png', 1, rickDes, 1));
   characters.addCharacter(Character('Директор', 'Агенства', 'Живой', 'Человек',
-      'Мужской', 'assets/images/characters/director.png', 1, dirAgent, 1));
+      'Мужской', 'assets/images/characters/director.png', 1, dirAgent, 2));
   characters.addCharacter(Character('Морти', 'Смит', 'Живой', 'Человек',
-      'Мужской', 'assets/images/characters/smit.png', 1, mortiSmitDes, 1));
+      'Мужской', 'assets/images/characters/smit.png', 1, mortiSmitDes, 2));
   characters.addCharacter(Character('Саммер', 'Смит', 'Живой', 'Человек',
       'Женский', 'assets/images/characters/sammer.png', 1, sammerSmitDes, 1));
   characters.addCharacter(Character('Альберт', 'Энштейн', 'Мертвый', 'Человек',
