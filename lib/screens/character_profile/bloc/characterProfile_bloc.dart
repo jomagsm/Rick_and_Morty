@@ -28,7 +28,7 @@ class CharacterProfileBloc
     /// Возвращаем состояние с данными
     yield CharacterProfileState.data(
         character: getCharacter(globalcharactersList, event.id),
-        location: getLocation(globalLocation,
+        location: getLocation(globalLocationList,
             getCharacter(globalcharactersList, event.id).locationId));
   }
 }

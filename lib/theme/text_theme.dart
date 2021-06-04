@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
 class TextThemes {
+  static var hintTextFindBar = TextStyle(
+      fontSize: 16,
+      height: getTextHeight(16, 24),
+      fontWeight: FontWeight.normal,
+      letterSpacing: 0.444444,
+      color: ColorTheme.appBarText);
   static var textAppearanceBody1 = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.normal,

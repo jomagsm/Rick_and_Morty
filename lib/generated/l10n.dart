@@ -35,6 +35,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Найти локацию`
+  String get appBarHintTextFindLocation {
+    return Intl.message(
+      'Найти локацию',
+      name: 'appBarHintTextFindLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Найти персонажа`
   String get appBarHintText {
     return Intl.message(
@@ -50,6 +60,16 @@ class S {
     return Intl.message(
       'Всего персонажей:',
       name: 'totalCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Всего локаций:`
+  String get totalLocations {
+    return Intl.message(
+      'Всего локаций:',
+      name: 'totalLocations',
       desc: '',
       args: [],
     );

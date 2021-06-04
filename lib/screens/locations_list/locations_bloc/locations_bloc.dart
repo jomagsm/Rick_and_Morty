@@ -20,6 +20,6 @@ class LocationsBloc extends Bloc<LocationsEvent, LocationsState> {
   Stream<LocationsState> _mapInitialLocationsEvent(
       _InitialLocationsEvent event) async* {
     yield LocationsState.loading();
-    yield LocationsState.date(globalLocationList);
+    yield LocationsState.data(globalLocationList);
   }
 }

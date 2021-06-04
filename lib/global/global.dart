@@ -8,6 +8,6 @@ List charactersListStart = createFixtures();
 List globalcharactersList = charactersListStart;
 Object globalCharacter = getCharacter(globalcharactersList, 1);
 List globalEpisodeList = createFixturesEpisode();
-List globalLocation = createLocations();
+List globalLocationList = createLocations();
 
 // Object globalPlace = Planet('Земля', 'Мир', 'C-137');
