@@ -14,7 +14,7 @@ class _$LocationsStateTearOff {
   const _$LocationsStateTearOff();
 
 // ignore: unused_element
-  _DataLocationsState date(@required List<Location> locationsList) {
+  _DataLocationsState data(@required List<Location> locationsList) {
     return _DataLocationsState(
       locationsList,
     );
@@ -39,26 +39,26 @@ const $LocationsState = _$LocationsStateTearOff();
 mixin _$LocationsState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult date(@required List<Location> locationsList),
+    @required TResult data(@required List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult date(@required List<Location> locationsList),
+    TResult data(@required List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult date(_DataLocationsState value),
+    @required TResult data(_DataLocationsState value),
     @required TResult initial(_InitialLocationsState value),
     @required TResult loading(_LoadLocationsState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult date(_DataLocationsState value),
+    TResult data(_DataLocationsState value),
     TResult initial(_InitialLocationsState value),
     TResult loading(_LoadLocationsState value),
     @required TResult orElse(),
@@ -123,7 +123,7 @@ class _$_DataLocationsState implements _DataLocationsState {
 
   @override
   String toString() {
-    return 'LocationsState.date(locationsList: $locationsList)';
+    return 'LocationsState.data(locationsList: $locationsList)';
   }
 
   @override
@@ -147,27 +147,27 @@ class _$_DataLocationsState implements _DataLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult date(@required List<Location> locationsList),
+    @required TResult data(@required List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
-    return date(locationsList);
+    return data(locationsList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult date(@required List<Location> locationsList),
+    TResult data(@required List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (date != null) {
-      return date(locationsList);
+    if (data != null) {
+      return data(locationsList);
     }
     return orElse();
   }
@@ -175,27 +175,27 @@ class _$_DataLocationsState implements _DataLocationsState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult date(_DataLocationsState value),
+    @required TResult data(_DataLocationsState value),
     @required TResult initial(_InitialLocationsState value),
     @required TResult loading(_LoadLocationsState value),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
-    return date(this);
+    return data(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult date(_DataLocationsState value),
+    TResult data(_DataLocationsState value),
     TResult initial(_InitialLocationsState value),
     TResult loading(_LoadLocationsState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (date != null) {
-      return date(this);
+    if (data != null) {
+      return data(this);
     }
     return orElse();
   }
@@ -249,11 +249,11 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult date(@required List<Location> locationsList),
+    @required TResult data(@required List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
     return initial();
@@ -262,7 +262,7 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult date(@required List<Location> locationsList),
+    TResult data(@required List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
@@ -277,11 +277,11 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult date(_DataLocationsState value),
+    @required TResult data(_DataLocationsState value),
     @required TResult initial(_InitialLocationsState value),
     @required TResult loading(_LoadLocationsState value),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
     return initial(this);
@@ -290,7 +290,7 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult date(_DataLocationsState value),
+    TResult data(_DataLocationsState value),
     TResult initial(_InitialLocationsState value),
     TResult loading(_LoadLocationsState value),
     @required TResult orElse(),
@@ -346,11 +346,11 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult date(@required List<Location> locationsList),
+    @required TResult data(@required List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
     return loading();
@@ -359,7 +359,7 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult date(@required List<Location> locationsList),
+    TResult data(@required List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
@@ -374,11 +374,11 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult date(_DataLocationsState value),
+    @required TResult data(_DataLocationsState value),
     @required TResult initial(_InitialLocationsState value),
     @required TResult loading(_LoadLocationsState value),
   }) {
-    assert(date != null);
+    assert(data != null);
     assert(initial != null);
     assert(loading != null);
     return loading(this);
@@ -387,7 +387,7 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult date(_DataLocationsState value),
+    TResult data(_DataLocationsState value),
     TResult initial(_InitialLocationsState value),
     TResult loading(_LoadLocationsState value),
     @required TResult orElse(),

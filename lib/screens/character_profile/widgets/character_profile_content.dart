@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/utils.dart';
+import 'package:rick_and_morty/screens/location_detail/screen.dart';
 import 'package:rick_and_morty/screens/models/character_model.dart';
 import 'package:rick_and_morty/screens/models/location_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
@@ -59,11 +61,17 @@ class CharacterProfileContent extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            getRowTitleContent(S.of(context).place, "${location.name}", () {}),
+            getRowTitleContent(S.of(context).place, "${location.name}", () {
+              Navigator.push(context,
+                  SlideRightRoute(page: LocationDetail(id: location.id)));
+            }),
             const SizedBox(
               height: 24,
             ),
-            getRowTitleContent(S.of(context).location, location.name, () {}),
+            getRowTitleContent(S.of(context).location, location.name, () {
+              Navigator.push(context,
+                  SlideRightRoute(page: LocationDetail(id: location.id)));
+            }),
             SizedBox(
               height: 36,
             ),

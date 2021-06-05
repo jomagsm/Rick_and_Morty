@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
-import 'package:rick_and_morty/components/app_bar/total_characters.dart';
 import 'package:rick_and_morty/components/app_bar/total_locations.dart';
 import 'package:rick_and_morty/components/bottomAppBar.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/global/navigator.dart';
+import 'package:rick_and_morty/screens/location_detail/screen.dart';
 import 'package:rick_and_morty/screens/locations_list/locations_bloc/locations_bloc.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
@@ -23,7 +24,7 @@ class LocationList extends StatelessWidget {
             return state.maybeMap(
               orElse: () => CircularProgressIndicator(),
               loading: (_) => CircularProgressIndicator(),
-              date: (_data) => Scaffold(
+              data: (_data) => Scaffold(
                 appBar: AppBar(
                   backgroundColor: ColorTheme.background,
                   elevation: 0,
@@ -41,50 +42,61 @@ class LocationList extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: _data.locationsList.length,
                       itemBuilder: (_, index) {
-                        return Column(
-                          children: [
-                            Container(
-                              height: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 16),
-                              decoration: BoxDecoration(
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                SlideRightRoute(
+                                    page: LocationDetail(
+                                        id: _data.locationsList[index].id)));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 150,
+                                margin: EdgeInsets.symmetric(horizontal: 16),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(10.0),
+                                        topLeft: Radius.circular(10.0)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            _data.locationsList[index].avatar),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: 16),
+                                decoration: BoxDecoration(
+                                  color: ColorTheme.appBarBackground,
                                   borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(10.0),
-                                      topLeft: Radius.circular(10.0)),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          _data.locationsList[index].avatar),
-                                      fit: BoxFit.cover)),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(horizontal: 16),
-                              decoration: BoxDecoration(
-                                color: ColorTheme.appBarBackground,
-                                borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10.0),
-                                    bottomRight: Radius.circular(10.0)),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Center(),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 12, left: 16),
-                                    child: Text(_data.locationsList[index].name,
-                                        style: TextThemes.profileListTitle),
-                                  ),
-                                  Container(
-                                    margin:
-                                        EdgeInsets.only(left: 16, bottom: 12),
-                                    child: Text(
-                                      "${_data.locationsList[index].type} \u00b7 ${_data.locationsList[index].dimension}",
-                                      style: TextThemes.textAppearanceCaption,
+                                      bottomLeft: Radius.circular(10.0),
+                                      bottomRight: Radius.circular(10.0)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Center(),
+                                    Container(
+                                      margin:
+                                          EdgeInsets.only(top: 12, left: 16),
+                                      child: Text(
+                                          _data.locationsList[index].name,
+                                          style: TextThemes.profileListTitle),
                                     ),
-                                  )
-                                ],
+                                    Container(
+                                      margin:
+                                          EdgeInsets.only(left: 16, bottom: 12),
+                                      child: Text(
+                                        "${_data.locationsList[index].type} \u00b7 ${_data.locationsList[index].dimension}",
+                                        style: TextThemes.textAppearanceCaption,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 24),
-                          ],
+                              SizedBox(height: 24),
+                            ],
+                          ),
                         );
                       }),
                 ),

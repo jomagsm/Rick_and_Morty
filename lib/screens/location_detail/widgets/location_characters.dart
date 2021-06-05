@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/global.dart';
+import 'package:rick_and_morty/global/navigator.dart';
+import 'package:rick_and_morty/screens/character_profile/screen.dart';
+import 'package:rick_and_morty/screens/models/character_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
-class EpisodeListView extends StatelessWidget {
-  const EpisodeListView({Key key}) : super(key: key);
+class LocationCharacters extends StatelessWidget {
+  final List<Character> characters;
+  const LocationCharacters({Key key, @required this.characters})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class EpisodeListView extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemCount: globalEpisodeList.length,
+        itemCount: characters.length,
         itemBuilder: (_, index) {
           return Container(
             margin: EdgeInsets.only(top: 24),
@@ -24,7 +28,7 @@ class EpisodeListView extends StatelessWidget {
                 height: 74,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                child: Image.asset(globalEpisodeList[index].avatar),
+                child: Image.asset(characters[index].avatar),
               ),
               Container(
                 margin: EdgeInsets.only(left: 16, right: 9),
@@ -32,20 +36,28 @@ class EpisodeListView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(characters[index].status.toUpperCase(),
+                        style: getTextTheme(characters[index].status)),
                     Text(
-                        "${S.of(context).seria.toUpperCase()} ${globalEpisodeList[index].seriesNum}",
-                        style: TextThemes.overline),
-                    Text("${globalEpisodeList[index].name}",
-                        style: TextThemes.textAppearanceOverlineFullName),
-                    Text("${globalEpisodeList[index].date}",
-                        style: TextThemes.profileEpisodeDate)
+                      "${characters[index].firstName} ${characters[index].lastName}",
+                      style: TextThemes.textAppearanceOverlineFullName,
+                    ),
+                    Text(
+                      "${characters[index].race} ${characters[index].gender}",
+                      style: TextThemes.textAppearanceCaption,
+                    )
                   ],
                 ),
               ),
               IconButton(
                   color: ColorTheme.textAppearanceOverlineFullName,
                   icon: Icon(Icons.navigate_next),
-                  onPressed: () {})
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        SlideRightRoute(
+                            page: CharacterProfile(id: characters[index].id)));
+                  })
             ]),
           );
         });
