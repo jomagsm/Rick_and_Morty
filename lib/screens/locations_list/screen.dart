@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/app_bar/total_locations.dart';
-import 'package:rick_and_morty/components/bottomAppBar.dart';
+import 'package:rick_and_morty/components/bottom_nav_bar.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/location_detail/screen.dart';
@@ -12,7 +12,6 @@ import 'package:rick_and_morty/theme/text_theme.dart';
 
 class LocationList extends StatelessWidget {
   const LocationList({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LocationsBloc>(
@@ -100,7 +99,7 @@ class LocationList extends StatelessWidget {
                         );
                       }),
                 ),
-                bottomNavigationBar: BottomAppBarCustom(),
+                bottomNavigationBar: BottomNavBar(),
               ),
             );
           },

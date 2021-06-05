@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textAppearanceCaptionCharacters" : MessageLookupByLibrary.simpleMessage("Персонажи"),
     "textAppearanceCaptionEpisode" : MessageLookupByLibrary.simpleMessage("Эпизоды"),
     "textAppearanceCaptionEpisodeAll" : MessageLookupByLibrary.simpleMessage("Все эпизоды"),
-    "textAppearanceCaptionLocation" : MessageLookupByLibrary.simpleMessage("Локациии"),
+    "textAppearanceCaptionLocation" : MessageLookupByLibrary.simpleMessage("Локации"),
     "totalCharacters" : MessageLookupByLibrary.simpleMessage("Всего персонажей:"),
     "totalLocations" : MessageLookupByLibrary.simpleMessage("Всего локаций:")
   };

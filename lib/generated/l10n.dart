@@ -105,10 +105,10 @@ class S {
     );
   }
 
-  /// `Локациии`
+  /// `Локации`
   String get textAppearanceCaptionLocation {
     return Intl.message(
-      'Локациии',
+      'Локации',
       name: 'textAppearanceCaptionLocation',
       desc: '',
       args: [],

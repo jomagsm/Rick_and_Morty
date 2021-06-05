@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/app_bar/total_characters.dart';
 import 'package:rick_and_morty/components/bottomAppBar.dart';
+import 'package:rick_and_morty/components/bottom_nav_bar.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
@@ -12,7 +13,6 @@ import 'widgets/characters_listView.dart';
 
 class CharactersScreen extends StatelessWidget {
   const CharactersScreen({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CharactersBloc>(
@@ -47,7 +47,7 @@ class CharactersScreen extends StatelessWidget {
                             charactersList: _data.characterList)
                         : CharactersGridView(
                             charactersList: _data.characterList)),
-                bottomNavigationBar: BottomAppBarCustom(),
+                bottomNavigationBar: BottomNavBar(),
               ),
             );
           },
