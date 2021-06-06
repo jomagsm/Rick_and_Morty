@@ -1,5 +1,7 @@
 {   "appBarHintTextFindLocation": "Найти локацию",
     "appBarHintText": "Найти персонажа",
+    "addBarHintTextFindEpisod": "Найти эпизод",
+    "season":"Сезон",
     "totalCharacters": "Всего персонажей:",
     "totalLocations":"Всего локаций:",
     "human": "Человек",

@@ -127,6 +127,12 @@ class TextThemes {
     fontWeight: FontWeight.bold,
     color: ColorTheme.textAppearanceOverlineFullName,
   );
+
+  static var tabBarLable = TextStyle(
+      fontSize: 14,
+      height: getTextHeight(14, 24),
+      fontWeight: FontWeight.w500,
+      letterSpacing: 1.5);
 }
 
 getTextTheme(status) {

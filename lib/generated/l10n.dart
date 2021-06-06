@@ -55,6 +55,26 @@ class S {
     );
   }
 
+  /// `Найти эпизод`
+  String get addBarHintTextFindEpisod {
+    return Intl.message(
+      'Найти эпизод',
+      name: 'addBarHintTextFindEpisod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Сезон`
+  String get season {
+    return Intl.message(
+      'Сезон',
+      name: 'season',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Всего персонажей:`
   String get totalCharacters {
     return Intl.message(
