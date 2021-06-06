@@ -6,6 +6,7 @@ abstract class CharacterProfileState with _$CharacterProfileState {
     /// Параметры
     @required final Character character,
     @required Location location,
+    @required List<EpisodeApp> episodes,
   }) = _CharacterProfileState;
   const factory CharacterProfileState.initial() = _Initial;
   const factory CharacterProfileState.loadInProgress() = _LoadInProgress;

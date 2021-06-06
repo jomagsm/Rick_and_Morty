@@ -47,6 +47,7 @@ class CharacterProfile extends StatelessWidget {
                             CharacterProfileContent(
                               character: _data.character,
                               location: _data.location,
+                              episodes: _data.episodes,
                             ),
                             Positioned(
                                 top: 218,

@@ -15,10 +15,13 @@ class _$CharacterProfileStateTearOff {
 
 // ignore: unused_element
   _CharacterProfileState data(
-      {@required Character character, @required Location location}) {
+      {@required Character character,
+      @required Location location,
+      @required List<EpisodeApp> episodes}) {
     return _CharacterProfileState(
       character: character,
       location: location,
+      episodes: episodes,
     );
   }
 
@@ -46,14 +49,17 @@ const $CharacterProfileState = _$CharacterProfileStateTearOff();
 mixin _$CharacterProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character, Location location),
+    @required
+        TResult data(
+            Character character, Location location, List<EpisodeApp> episodes),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character, Location location),
+    TResult data(
+        Character character, Location location, List<EpisodeApp> episodes),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -98,7 +104,8 @@ abstract class _$CharacterProfileStateCopyWith<$Res> {
   factory _$CharacterProfileStateCopyWith(_CharacterProfileState value,
           $Res Function(_CharacterProfileState) then) =
       __$CharacterProfileStateCopyWithImpl<$Res>;
-  $Res call({Character character, Location location});
+  $Res call(
+      {Character character, Location location, List<EpisodeApp> episodes});
 }
 
 /// @nodoc
@@ -116,11 +123,14 @@ class __$CharacterProfileStateCopyWithImpl<$Res>
   $Res call({
     Object character = freezed,
     Object location = freezed,
+    Object episodes = freezed,
   }) {
     return _then(_CharacterProfileState(
       character:
           character == freezed ? _value.character : character as Character,
       location: location == freezed ? _value.location : location as Location,
+      episodes:
+          episodes == freezed ? _value.episodes : episodes as List<EpisodeApp>,
     ));
   }
 }
@@ -128,9 +138,12 @@ class __$CharacterProfileStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_CharacterProfileState implements _CharacterProfileState {
   const _$_CharacterProfileState(
-      {@required this.character, @required this.location})
+      {@required this.character,
+      @required this.location,
+      @required this.episodes})
       : assert(character != null),
-        assert(location != null);
+        assert(location != null),
+        assert(episodes != null);
 
   @override
 
@@ -138,10 +151,12 @@ class _$_CharacterProfileState implements _CharacterProfileState {
   final Character character;
   @override
   final Location location;
+  @override
+  final List<EpisodeApp> episodes;
 
   @override
   String toString() {
-    return 'CharacterProfileState.data(character: $character, location: $location)';
+    return 'CharacterProfileState.data(character: $character, location: $location, episodes: $episodes)';
   }
 
   @override
@@ -153,14 +168,18 @@ class _$_CharacterProfileState implements _CharacterProfileState {
                     .equals(other.character, character)) &&
             (identical(other.location, location) ||
                 const DeepCollectionEquality()
-                    .equals(other.location, location)));
+                    .equals(other.location, location)) &&
+            (identical(other.episodes, episodes) ||
+                const DeepCollectionEquality()
+                    .equals(other.episodes, episodes)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(character) ^
-      const DeepCollectionEquality().hash(location);
+      const DeepCollectionEquality().hash(location) ^
+      const DeepCollectionEquality().hash(episodes);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +190,9 @@ class _$_CharacterProfileState implements _CharacterProfileState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character, Location location),
+    @required
+        TResult data(
+            Character character, Location location, List<EpisodeApp> episodes),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -180,13 +201,14 @@ class _$_CharacterProfileState implements _CharacterProfileState {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadFailure != null);
-    return data(character, location);
+    return data(character, location, episodes);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character, Location location),
+    TResult data(
+        Character character, Location location, List<EpisodeApp> episodes),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -194,7 +216,7 @@ class _$_CharacterProfileState implements _CharacterProfileState {
   }) {
     assert(orElse != null);
     if (data != null) {
-      return data(character, location);
+      return data(character, location, episodes);
     }
     return orElse();
   }
@@ -234,11 +256,13 @@ class _$_CharacterProfileState implements _CharacterProfileState {
 abstract class _CharacterProfileState implements CharacterProfileState {
   const factory _CharacterProfileState(
       {@required Character character,
-      @required Location location}) = _$_CharacterProfileState;
+      @required Location location,
+      @required List<EpisodeApp> episodes}) = _$_CharacterProfileState;
 
   /// Параметры
   Character get character;
   Location get location;
+  List<EpisodeApp> get episodes;
   @JsonKey(ignore: true)
   _$CharacterProfileStateCopyWith<_CharacterProfileState> get copyWith;
 }
@@ -280,7 +304,9 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character, Location location),
+    @required
+        TResult data(
+            Character character, Location location, List<EpisodeApp> episodes),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -295,7 +321,8 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character, Location location),
+    TResult data(
+        Character character, Location location, List<EpisodeApp> episodes),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -383,7 +410,9 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character, Location location),
+    @required
+        TResult data(
+            Character character, Location location, List<EpisodeApp> episodes),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -398,7 +427,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character, Location location),
+    TResult data(
+        Character character, Location location, List<EpisodeApp> episodes),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),
@@ -486,7 +516,9 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(Character character, Location location),
+    @required
+        TResult data(
+            Character character, Location location, List<EpisodeApp> episodes),
     @required TResult initial(),
     @required TResult loadInProgress(),
     @required TResult loadFailure(),
@@ -501,7 +533,8 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(Character character, Location location),
+    TResult data(
+        Character character, Location location, List<EpisodeApp> episodes),
     TResult initial(),
     TResult loadInProgress(),
     TResult loadFailure(),

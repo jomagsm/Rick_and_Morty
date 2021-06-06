@@ -4,6 +4,7 @@ import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/utils.dart';
 import 'package:rick_and_morty/screens/location_detail/screen.dart';
 import 'package:rick_and_morty/screens/models/character_model.dart';
+import 'package:rick_and_morty/screens/models/episode_model.dart';
 import 'package:rick_and_morty/screens/models/location_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
@@ -13,8 +14,9 @@ import 'episode_list_view.dart';
 class CharacterProfileContent extends StatelessWidget {
   final Character character;
   final Location location;
+  final List<EpisodeApp> episodes;
   const CharacterProfileContent(
-      {Key key, @required this.character, this.location})
+      {Key key, @required this.character, this.location, this.episodes})
       : super(key: key);
 
   @override
@@ -94,7 +96,9 @@ class CharacterProfileContent extends StatelessWidget {
                 )
               ],
             ),
-            EpisodeListView(),
+            EpisodeListView(
+              episodes: episodes,
+            ),
           ],
         ),
       ),

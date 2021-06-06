@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/global.dart';
+import 'package:rick_and_morty/screens/models/episode_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class EpisodeListView extends StatelessWidget {
-  const EpisodeListView({Key key}) : super(key: key);
+  final List<EpisodeApp> episodes;
+  const EpisodeListView({Key key, @required this.episodes}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class EpisodeListView extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemCount: globalEpisodeList.length,
+        itemCount: episodes.length,
         itemBuilder: (_, index) {
           return Container(
             margin: EdgeInsets.only(top: 24),
@@ -24,7 +26,7 @@ class EpisodeListView extends StatelessWidget {
                 height: 74,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                child: Image.asset(globalEpisodeList[index].avatar),
+                child: Image.asset(episodes[index].avatar),
               ),
               Container(
                 margin: EdgeInsets.only(left: 16, right: 9),
@@ -33,11 +35,11 @@ class EpisodeListView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                        "${S.of(context).seria.toUpperCase()} ${globalEpisodeList[index].seriesNum}",
+                        "${S.of(context).seria.toUpperCase()} ${episodes[index].seriesNum}",
                         style: TextThemes.overline),
-                    Text("${globalEpisodeList[index].name}",
+                    Text("${episodes[index].name}",
                         style: TextThemes.textAppearanceOverlineFullName),
-                    Text("${globalEpisodeList[index].date}",
+                    Text("${episodes[index].date}",
                         style: TextThemes.profileEpisodeDate)
                   ],
                 ),
