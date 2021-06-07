@@ -8,4 +8,5 @@ class SvgIcons {
   static var episode = 'assets/svg_icons/episode.svg';
   static var settings = 'assets/svg_icons/Settings.3.svg';
   static var arowBack = 'assets/svg_icons/arow_back.svg';
+  static var play = 'assets/svg_icons/play.svg';
 }

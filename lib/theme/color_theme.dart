@@ -15,4 +15,5 @@ class ColorTheme {
   static var episodeSeriaStyleColor = Color.fromRGBO(34, 162, 189, 0.87);
   static var episodeDateStyleColor = Color(0xff6E798C99);
   static var profileDivenderColor = Color.fromRGBO(21, 42, 58, 1);
+  static var playButtonBac = Color(0xFF22A2BD);
 }

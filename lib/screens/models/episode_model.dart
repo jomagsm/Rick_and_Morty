@@ -1,15 +1,16 @@
 import 'package:rick_and_morty/global/global.dart';
+import 'package:rick_and_morty/screens/models/character_model.dart';
 
 class EpisodeApp {
   int id;
   int seriesNum;
   String name;
-  String desription;
+  String description;
   String avatar;
   List<int> characters;
   int season;
   String date;
-  EpisodeApp(this.id, this.seriesNum, this.name, this.desription, this.avatar,
+  EpisodeApp(this.id, this.seriesNum, this.name, this.description, this.avatar,
       this.characters, this.season, this.date);
 }
 
@@ -20,6 +21,22 @@ class EpisodesApp {
   addEpisode(episode) {
     this.episodes.add(episode);
   }
+}
+
+EpisodeApp getEpisode(int episodeId) {
+  for (var episode in globalEpisodeList) {
+    if (episode.id == episodeId) {
+      return episode;
+    }
+  }
+}
+
+List<Character> getCharactersEpisode(EpisodeApp episode) {
+  List<Character> characters = [];
+  for (var i in episode.characters) {
+    characters.add(getCharacter(globalcharactersList, i));
+  }
+  return characters;
 }
 
 getCharacterEpisodes(int characterId) {
@@ -51,7 +68,7 @@ createFixturesEpisode() {
       1,
       "Пилот Сезон 1",
       des,
-      "assets/images/characters/episodes/episode1.png",
+      "assets/images/characters/episodes/episode.png",
       [1, 2, 5],
       1,
       "2 декабря 2013"));
@@ -116,7 +133,7 @@ createFixturesEpisode() {
       3,
       "Пилот Сезон 2",
       des,
-      "assets/images/characters/episodes/episode3.png",
+      "assets/images/characters/episodes/episode.png",
       [1, 2, 5],
       2,
       "2 декабря 2013"));
@@ -201,7 +218,7 @@ createFixturesEpisode() {
       2,
       "Анатомический парк Сезон 3",
       des,
-      "assets/images/characters/episodes/episode2.png",
+      "assets/images/characters/episodes/episode.png",
       [1, 2, 5, 3],
       3,
       "2 декабря 2013"));
@@ -304,7 +321,7 @@ createFixturesEpisode() {
       3,
       "Пилот Сезон 4",
       des,
-      "assets/images/characters/episodes/episode3.png",
+      "assets/images/characters/episodes/episode.png",
       [1, 2, 5],
       4,
       "2 декабря 2013"));

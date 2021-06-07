@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "human" : MessageLookupByLibrary.simpleMessage("Человек"),
     "location" : MessageLookupByLibrary.simpleMessage("Местоположение"),
     "place" : MessageLookupByLibrary.simpleMessage("Место рождения"),
+    "premiere" : MessageLookupByLibrary.simpleMessage("Премьера"),
     "race" : MessageLookupByLibrary.simpleMessage("Расса"),
     "season" : MessageLookupByLibrary.simpleMessage("Сезон"),
     "seria" : MessageLookupByLibrary.simpleMessage("Серия"),
