@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/data/network/models/episode_model.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
-import 'package:rick_and_morty/global/global.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/episode_detail/screen.dart';
-import 'package:rick_and_morty/screens/models/episode_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 

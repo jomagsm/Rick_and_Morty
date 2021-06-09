@@ -25,12 +25,17 @@ class CharacterProfile extends StatelessWidget {
                 loadInProgress: (_) => CircularProgressIndicator(),
                 data: (_data) => Scaffold(
                       appBar: AppBar(
+                          automaticallyImplyLeading: true,
+                          leadingWidth: 90,
                           backgroundColor: Colors.transparent,
                           elevation: 0,
                           leading: Container(
-                            margin: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 16),
+                            width: 48,
+                            height: 48,
                             child: FloatingActionButton(
                                 backgroundColor: ColorTheme.appBarBackground,
+                                elevation: 0,
                                 child: SvgPicture.asset(
                                   SvgIcons.arowBack,
                                 ),

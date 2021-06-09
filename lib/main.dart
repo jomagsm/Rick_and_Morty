@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:rick_and_morty/screens/episodes_list/screen.dart';
-import 'package:rick_and_morty/screens/locations_list/screen.dart';
 import 'package:rick_and_morty/screens/main_screen/screen.dart';
-
 import 'generated/l10n.dart';
-import 'screens/character_list/screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +25,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: CharactersScreen(),
       home: MainScreen(),
     );
   }

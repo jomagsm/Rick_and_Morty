@@ -9,4 +9,6 @@ class SvgIcons {
   static var settings = 'assets/svg_icons/Settings.3.svg';
   static var arowBack = 'assets/svg_icons/arow_back.svg';
   static var play = 'assets/svg_icons/play.svg';
+  static var colorpalette = 'assets/svg_icons/color_palette.svg';
+  static var arrowNext = 'assets/svg_icons/arrow_next.svg';
 }

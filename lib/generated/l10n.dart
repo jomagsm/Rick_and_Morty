@@ -205,6 +205,46 @@ class S {
     );
   }
 
+  /// `Внешний вид`
+  String get apperance {
+    return Intl.message(
+      'Внешний вид',
+      name: 'apperance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `О приложении`
+  String get aboutTheApp {
+    return Intl.message(
+      'О приложении',
+      name: 'aboutTheApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Версия приложения`
+  String get versionApp {
+    return Intl.message(
+      'Версия приложения',
+      name: 'versionApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Включена`
+  String get on {
+    return Intl.message(
+      'Включена',
+      name: 'on',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Премьера`
   String get premiere {
     return Intl.message(

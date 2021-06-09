@@ -3,7 +3,7 @@ import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class TotalLocation extends StatelessWidget {
-  int totalValue;
+  final int totalValue;
   TotalLocation({Key key, @required this.totalValue}) : super(key: key);
 
   @override

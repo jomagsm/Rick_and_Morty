@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/screens/episodes_list/episodes_bloc/episodes_bloc.dart';
 import 'package:rick_and_morty/screens/episodes_list/widgets/episodes_list.dart';
@@ -20,8 +21,8 @@ class EpisodesList extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-              orElse: () => CircularProgressIndicator(),
-              loading: (_) => CircularProgressIndicator(),
+              orElse: () => customCircularProgress(),
+              loading: (_) => customCircularProgress(),
               data: (_data) => DefaultTabController(
                 length: _data.season.length,
                 child: Scaffold(

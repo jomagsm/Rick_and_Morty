@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/location_model.dart';
 import 'package:rick_and_morty/global/global.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
-import 'package:rick_and_morty/screens/models/location_model.dart';
 
 part 'location_state.dart';
 part 'location_event.dart';
@@ -22,7 +22,6 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
     yield LocationState.loadInProgress();
     yield LocationState.data(
         location: getLocation(globalLocationList, event.id),
-        characters:
-            getLocationCharacters(event.id));
+        characters: getLocationCharacters(event.id));
   }
 }

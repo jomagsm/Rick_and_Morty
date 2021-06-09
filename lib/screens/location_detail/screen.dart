@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
-import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
 import 'package:rick_and_morty/screens/location_detail/location_bloc/location_bloc.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,12 +27,17 @@ class LocationDetail extends StatelessWidget {
                 loadInProgress: (_) => CircularProgressIndicator(),
                 data: (_data) => Scaffold(
                       appBar: AppBar(
+                          automaticallyImplyLeading: true,
+                          leadingWidth: 90,
                           backgroundColor: Colors.transparent,
                           elevation: 0,
                           leading: Container(
-                            margin: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 16),
+                            width: 48,
+                            height: 48,
                             child: FloatingActionButton(
                                 backgroundColor: ColorTheme.appBarBackground,
+                                elevation: 0,
                                 child: SvgPicture.asset(
                                   SvgIcons.arowBack,
                                 ),

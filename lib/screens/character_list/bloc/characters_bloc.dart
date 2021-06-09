@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
 import 'package:rick_and_morty/global/global.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
 
 part 'characters_event.dart';
 part 'characters_state.dart';

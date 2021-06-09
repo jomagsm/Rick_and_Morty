@@ -21,12 +21,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "aboutTheApp" : MessageLookupByLibrary.simpleMessage("О приложении"),
     "addBarHintTextFindEpisod" : MessageLookupByLibrary.simpleMessage("Найти эпизод"),
     "appBarHintText" : MessageLookupByLibrary.simpleMessage("Найти персонажа"),
     "appBarHintTextFindLocation" : MessageLookupByLibrary.simpleMessage("Найти локацию"),
+    "apperance" : MessageLookupByLibrary.simpleMessage("Внешний вид"),
     "gender" : MessageLookupByLibrary.simpleMessage("Пол"),
     "human" : MessageLookupByLibrary.simpleMessage("Человек"),
     "location" : MessageLookupByLibrary.simpleMessage("Местоположение"),
+    "on" : MessageLookupByLibrary.simpleMessage("Включена"),
     "place" : MessageLookupByLibrary.simpleMessage("Место рождения"),
     "premiere" : MessageLookupByLibrary.simpleMessage("Премьера"),
     "race" : MessageLookupByLibrary.simpleMessage("Расса"),
@@ -38,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textAppearanceCaptionEpisodeAll" : MessageLookupByLibrary.simpleMessage("Все эпизоды"),
     "textAppearanceCaptionLocation" : MessageLookupByLibrary.simpleMessage("Локации"),
     "totalCharacters" : MessageLookupByLibrary.simpleMessage("Всего персонажей:"),
-    "totalLocations" : MessageLookupByLibrary.simpleMessage("Всего локаций:")
+    "totalLocations" : MessageLookupByLibrary.simpleMessage("Всего локаций:"),
+    "versionApp" : MessageLookupByLibrary.simpleMessage("Версия приложения")
   };
 }

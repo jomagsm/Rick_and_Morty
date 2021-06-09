@@ -1,5 +1,6 @@
 import 'package:rick_and_morty/global/global.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
+
+import 'character_model.dart';
 
 class EpisodeApp {
   int id;
@@ -29,6 +30,7 @@ EpisodeApp getEpisode(int episodeId) {
       return episode;
     }
   }
+  return null;
 }
 
 List<Character> getCharactersEpisode(EpisodeApp episode) {

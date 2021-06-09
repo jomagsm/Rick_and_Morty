@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
 class CircleAvatarProfile extends StatelessWidget {

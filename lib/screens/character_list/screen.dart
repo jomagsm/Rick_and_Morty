@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/app_bar/total_characters.dart';
-import 'package:rick_and_morty/components/bottomAppBar.dart';
-import 'package:rick_and_morty/components/bottom_nav_bar.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
@@ -22,8 +21,8 @@ class CharactersScreen extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-              orElse: () => CircularProgressIndicator(),
-              loading: (_) => CircularProgressIndicator(),
+              orElse: () => customCircularProgress(),
+              loading: (_) => customCircularProgress(),
               data: (_data) => Scaffold(
                 appBar: AppBar(
                   backgroundColor: ColorTheme.background,
@@ -47,7 +46,6 @@ class CharactersScreen extends StatelessWidget {
                             charactersList: _data.characterList)
                         : CharactersGridView(
                             charactersList: _data.characterList)),
-                // bottomNavigationBar: BottomNavBar(),
               ),
             );
           },

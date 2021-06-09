@@ -107,6 +107,13 @@ class TextThemes {
       color: ColorTheme.textAppearanceOverlineFullName,
       letterSpacing: 0.15);
 
+  static var profileListTitle2 = TextStyle(
+      fontSize: 20,
+      height: getTextHeight(20, 24),
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.15);
+
   static var overline = TextStyle(
       fontSize: 10,
       height: getTextHeight(10, 16),

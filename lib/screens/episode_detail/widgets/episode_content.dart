@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/episode_model.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/utils.dart';
 import 'package:rick_and_morty/screens/location_detail/widgets/location_characters.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
-import 'package:rick_and_morty/screens/models/episode_model.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 

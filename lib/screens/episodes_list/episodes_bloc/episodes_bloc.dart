@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/screens/models/episode_model.dart';
+import 'package:rick_and_morty/data/network/models/episode_model.dart';
 
 part 'episodes_state.dart';
 part 'episodes_event.dart';
@@ -23,13 +23,15 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
       _InitialEpisodesEvent event) async* {
     yield EpisodesState.loading();
 
-    yield EpisodesState.data(season: season,episodes: getSeasonEpisodes(seasonId));
+    yield EpisodesState.data(
+        season: season, episodes: getSeasonEpisodes(seasonId));
   }
 
   Stream<EpisodesState> _mapSelectEpisodesEvent(
       _SelectEpisodesEvent event) async* {
     yield EpisodesState.loading();
     seasonId = event.seasonId;
-    yield EpisodesState.data(season: season,episodes: getSeasonEpisodes(seasonId));
+    yield EpisodesState.data(
+        season: season, episodes: getSeasonEpisodes(seasonId));
   }
 }

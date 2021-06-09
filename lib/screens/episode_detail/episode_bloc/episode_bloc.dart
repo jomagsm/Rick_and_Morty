@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
-import 'package:rick_and_morty/screens/models/episode_model.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/episode_model.dart';
 
 part 'episode_state.dart';
 part 'episode_event.dart';

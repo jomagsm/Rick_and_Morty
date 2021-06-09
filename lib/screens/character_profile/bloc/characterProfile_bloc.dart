@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/episode_model.dart';
+import 'package:rick_and_morty/data/network/models/location_model.dart';
 import 'package:rick_and_morty/global/global.dart';
-import 'package:rick_and_morty/screens/models/character_model.dart';
-import 'package:rick_and_morty/screens/models/episode_model.dart';
-import 'package:rick_and_morty/screens/models/location_model.dart';
 
 part 'characterProfile_state.dart';
 part 'characterProfile_event.dart';
@@ -27,10 +27,13 @@ class CharacterProfileBloc
     yield CharacterProfileState.loadInProgress();
 
     /// Возвращаем состояние с данными
-    yield CharacterProfileState.data(
-        character: getCharacter(globalcharactersList, event.id),
+    final Character _character = getCharacter(globalcharactersList, event.id);
+    yield 
+    CharacterProfileState.data(
+         
+        character: _character,
         location: getLocation(globalLocationList,
-            getCharacter(globalcharactersList, event.id).locationId),
-            episodes: getCharacterEpisodes(event.id));
+            _character.locationId),
+        episodes: getCharacterEpisodes(event.id));
   }
 }

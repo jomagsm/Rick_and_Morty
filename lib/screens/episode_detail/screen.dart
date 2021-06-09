@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
-import 'package:rick_and_morty/screens/character_profile/widgets/character_profile_content.dart';
-import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
-import 'package:rick_and_morty/screens/character_profile/widgets/circle_avatar.dart';
 import 'package:rick_and_morty/screens/episode_detail/episode_bloc/episode_bloc.dart';
 import 'package:rick_and_morty/screens/episode_detail/widgets/episode_big_image.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
@@ -31,16 +28,21 @@ class EpisodeProfile extends StatelessWidget {
                   appBar: AppBar(
                       backgroundColor: Colors.transparent,
                       elevation: 0,
+                      leadingWidth: 100,
                       leading: Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        child: FloatingActionButton(
-                            backgroundColor: ColorTheme.appBarBackground,
-                            child: SvgPicture.asset(
-                              SvgIcons.arowBack,
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            }),
+                        margin: const EdgeInsets.only(left: 16),
+                        child: SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: FloatingActionButton(
+                              backgroundColor: ColorTheme.appBarBackground,
+                              child: SvgPicture.asset(
+                                SvgIcons.arowBack,
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              }),
+                        ),
                       )),
                   extendBodyBehindAppBar: true,
                   backgroundColor: ColorTheme.background,
@@ -54,20 +56,6 @@ class EpisodeProfile extends StatelessWidget {
                           episode: _data.episode,
                           characters: _data.characters,
                         ),
-                        // BigImagePosition(character: _data.character),
-                        // CharacterProfileContent(
-                        //   character: _data.character,
-                        //   location: _data.location,
-                        //   episodes: _data.episodes,
-                        // ),
-                        // Positioned(
-                        //     top: 218,
-                        //     child: Container(
-                        //       color: ColorTheme.background,
-                        //       height: 65,
-                        //       width: MediaQuery.of(context).size.height,
-                        //     )),
-                        // CircleAvatarProfile(character: _data.character),
                         BigPlayButton(),
                       ],
                     ),

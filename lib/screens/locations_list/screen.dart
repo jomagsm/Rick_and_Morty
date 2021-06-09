@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/app_bar/total_locations.dart';
-import 'package:rick_and_morty/components/bottom_nav_bar.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/location_detail/screen.dart';
@@ -21,8 +21,8 @@ class LocationList extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-              orElse: () => CircularProgressIndicator(),
-              loading: (_) => CircularProgressIndicator(),
+              orElse: () => customCircularProgress(),
+              loading: (_) => customCircularProgress(),
               data: (_data) => Scaffold(
                 appBar: AppBar(
                   backgroundColor: ColorTheme.background,
@@ -99,7 +99,6 @@ class LocationList extends StatelessWidget {
                         );
                       }),
                 ),
-                bottomNavigationBar: BottomNavBar(),
               ),
             );
           },

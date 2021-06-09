@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:rick_and_morty/components/bottom_nav_bar.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
-import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/character_list/screen.dart';
 import 'package:rick_and_morty/screens/episodes_list/screen.dart';
 import 'package:rick_and_morty/screens/locations_list/screen.dart';
+import 'package:rick_and_morty/screens/settings_screen/screen.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,13 +20,13 @@ class _MainScreenState extends State<MainScreen> {
     CharactersScreen(),
     LocationList(),
     EpisodesList(),
-    LocationList()
+    SettingsScreen()
   ];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ,
+      body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         selectedFontSize: 12,
@@ -77,7 +76,6 @@ class _MainScreenState extends State<MainScreen> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            // Navigator.push(context, SlideRightRoute(page: tabs[index]));
           });
         },
       ),

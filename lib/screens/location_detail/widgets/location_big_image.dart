@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/screens/models/location_model.dart';
+import 'package:rick_and_morty/data/network/models/location_model.dart';
 
 class BigImageLocationPosition extends StatelessWidget {
   final Location location;
