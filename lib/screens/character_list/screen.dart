@@ -47,7 +47,7 @@ class CharactersScreen extends StatelessWidget {
                             charactersList: _data.characterList)
                         : CharactersGridView(
                             charactersList: _data.characterList)),
-                bottomNavigationBar: BottomNavBar(),
+                // bottomNavigationBar: BottomNavBar(),
               ),
             );
           },

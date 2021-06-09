@@ -4,6 +4,7 @@ import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/character_list/screen.dart';
+import 'package:rick_and_morty/screens/episodes_list/screen.dart';
 import 'package:rick_and_morty/screens/locations_list/screen.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final tabs = [
     CharactersScreen(),
     LocationList(),
-    CharactersScreen(),
+    EpisodesList(),
     LocationList()
   ];
   int _currentIndex = 0;
