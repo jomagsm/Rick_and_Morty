@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rick_and_morty/components/app_bar/arrow_back_app_bar_transparent.dart';
 import 'package:rick_and_morty/components/circular_progress.dart';
-import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/character_profile_content.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/circle_avatar.dart';
@@ -25,25 +24,13 @@ class CharacterProfile extends StatelessWidget {
                 orElse: () => customCircularProgress(),
                 loadInProgress: (_) => customCircularProgress(),
                 data: (_data) => Scaffold(
-                      appBar: AppBar(
-                          automaticallyImplyLeading: true,
-                          leadingWidth: 90,
-                          backgroundColor: Colors.transparent,
-                          elevation: 0,
-                          leading: Container(
-                            padding: const EdgeInsets.only(left: 16),
-                            width: 48,
-                            height: 48,
-                            child: FloatingActionButton(
-                                backgroundColor: ColorTheme.appBarBackground,
-                                elevation: 0,
-                                child: SvgPicture.asset(
-                                  SvgIcons.arowBack,
-                                ),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                }),
-                          )),
+                      appBar: PreferredSize(
+                        preferredSize: Size.fromHeight(50.0),
+                        child: AppBarArrowBack(
+                          title: false,
+                          arrowBackButton: true,
+                        ),
+                      ),
                       extendBodyBehindAppBar: true,
                       backgroundColor: ColorTheme.background,
                       body: SingleChildScrollView(

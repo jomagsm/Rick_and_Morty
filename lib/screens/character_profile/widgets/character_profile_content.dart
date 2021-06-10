@@ -29,7 +29,7 @@ class CharacterProfileContent extends StatelessWidget {
         color: ColorTheme.background,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 90,
             ),
             Text(
@@ -40,7 +40,7 @@ class CharacterProfileContent extends StatelessWidget {
               '${character.status.toUpperCase()}',
               style: getTextTheme(character.status),
             ),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Text(
@@ -60,7 +60,7 @@ class CharacterProfileContent extends StatelessWidget {
                 getColumTitleContent(S.of(context).race, "${character.race}"),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             getRowTitleContent(S.of(context).place, "${location.name}", () {
@@ -74,14 +74,14 @@ class CharacterProfileContent extends StatelessWidget {
               Navigator.push(context,
                   SlideRightRoute(page: LocationDetail(id: location.id)));
             }),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Divider(
               color: ColorTheme.profileDivenderColor,
               height: 2,
             ),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Row(

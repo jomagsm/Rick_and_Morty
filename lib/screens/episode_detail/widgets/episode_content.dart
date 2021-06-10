@@ -24,7 +24,7 @@ class EpisodeContent extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 82,
             ),
             Center(
@@ -40,7 +40,7 @@ class EpisodeContent extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextThemes.overline),
             ),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Text(
@@ -55,14 +55,14 @@ class EpisodeContent extends StatelessWidget {
               child: getColumTitleContent(
                   S.of(context).premiere, "${episode.date}"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Divider(
               color: ColorTheme.appBarBackground,
               height: 2,
             ),
-            SizedBox(
+            const SizedBox(
               height: 36,
             ),
             Text(S.of(context).textAppearanceCaptionCharacters,

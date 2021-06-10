@@ -1,31 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
+import 'package:rick_and_morty/theme/text_theme.dart';
 
 class AppBarArrowBack extends StatelessWidget {
-  const AppBarArrowBack({Key key}) : super(key: key);
+  final bool title;
+  final bool arrowBackButton;
+  const AppBarArrowBack({Key key, @required this.title, this.arrowBackButton})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        automaticallyImplyLeading: true,
-        leadingWidth: 90,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Container(
-          padding: const EdgeInsets.only(left: 16),
-          width: 48,
-          height: 48,
-          child: FloatingActionButton(
-              backgroundColor: ColorTheme.appBarBackground,
-              elevation: 0,
-              child: SvgPicture.asset(
-                SvgIcons.arowBack,
+      centerTitle: true,
+      title: title
+          ? Text(S.of(context).settings, style: TextThemes.profileListTitle)
+          : SizedBox(),
+      automaticallyImplyLeading: true,
+      leadingWidth: 90,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: arrowBackButton
+          ? Container(
+              padding: const EdgeInsets.only(left: 16),
+              width: 48,
+              height: 48,
+              child: FloatingActionButton(
+                backgroundColor: ColorTheme.appBarBackground,
+                elevation: 0,
+                child: SvgPicture.asset(
+                  SvgIcons.arowBack,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-        ));
+            )
+          : SizedBox(),
+    );
   }
 }

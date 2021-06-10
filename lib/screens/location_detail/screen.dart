@@ -66,7 +66,7 @@ class LocationDetail extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(height: 34),
+                                      const SizedBox(height: 34),
                                       Text(
                                         _data.location.name,
                                         style: TextThemes.locationDetailH1,
@@ -75,7 +75,7 @@ class LocationDetail extends StatelessWidget {
                                         "${_data.location.type} \u00b7 ${_data.location.dimension}",
                                         style: TextThemes.textAppearanceCaption,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 32,
                                       ),
                                       Text(
@@ -83,7 +83,7 @@ class LocationDetail extends StatelessWidget {
                                         style:
                                             TextThemes.profileDescriptionStyle,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 36,
                                       ),
                                       Text(

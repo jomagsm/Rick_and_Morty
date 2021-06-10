@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rick_and_morty/components/app_bar/arrow_back_app_bar_transparent.dart';
 import 'package:rick_and_morty/data/network/models/settings_app_model.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
@@ -21,26 +22,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorTheme.background,
-      appBar: AppBar(
-        title: Text(S.of(context).settings, style: TextThemes.profileListTitle),
-        automaticallyImplyLeading: true,
-        leadingWidth: 90,
-        backgroundColor: ColorTheme.background,
-        elevation: 0,
-        leading: Container(
-          padding: const EdgeInsets.only(left: 16),
-          width: 48,
-          height: 48,
-          child: FloatingActionButton(
-            backgroundColor: ColorTheme.appBarBackground,
-            elevation: 0,
-            child: SvgPicture.asset(
-              SvgIcons.arowBack,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0),
+        child: AppBarArrowBack(
+          title: true,
+          arrowBackButton: false,
         ),
       ),
       body: SafeArea(
