@@ -1,8 +1,23 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/resources/images.dart';
 
-class LoadingPage extends StatelessWidget {
-  const LoadingPage({Key key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  final String nextRoute;
+  SplashScreen({this.nextRoute});
+  @override
+  State<StatefulWidget> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2), () {
+      Navigator.of(context).pushReplacementNamed(widget.nextRoute);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

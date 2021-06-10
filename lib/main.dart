@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rick_and_morty/screens/loading/screen.dart';
 import 'package:rick_and_morty/screens/main_screen/screen.dart';
 import 'generated/l10n.dart';
 
@@ -8,7 +9,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  final routes = <String, WidgetBuilder>{
+    '/Home': (BuildContext context) => MainScreen()
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +28,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MainScreen(),
+      home: SplashScreen(nextRoute: '/Home'),
+      routes: routes,
     );
   }
 }
