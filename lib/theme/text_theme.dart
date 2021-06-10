@@ -107,6 +107,13 @@ class TextThemes {
       color: ColorTheme.textAppearanceOverlineFullName,
       letterSpacing: 0.15);
 
+  static var choiceText = TextStyle(
+      fontSize: 16,
+      height: getTextHeight(16, 24),
+      fontWeight: FontWeight.normal,
+      color: ColorTheme.textAppearanceOverlineFullName,
+      letterSpacing: 0.15);
+
   static var profileListTitle2 = TextStyle(
       fontSize: 20,
       height: getTextHeight(20, 24),
@@ -138,6 +145,13 @@ class TextThemes {
   static var tabBarLable = TextStyle(
       fontSize: 14,
       height: getTextHeight(14, 24),
+      fontWeight: FontWeight.w500,
+      letterSpacing: 1.5);
+
+  static var settingsChoiceButton = TextStyle(
+      fontSize: 14,
+      height: getTextHeight(14, 24),
+      color: ColorTheme.textAppearanceOverlineFullName,
       fontWeight: FontWeight.w500,
       letterSpacing: 1.5);
 }

@@ -14,7 +14,7 @@ class _$LocationsStateTearOff {
   const _$LocationsStateTearOff();
 
 // ignore: unused_element
-  _DataLocationsState data(@required List<Location> locationsList) {
+  _DataLocationsState data(List<Location> locationsList) {
     return _DataLocationsState(
       locationsList,
     );
@@ -39,13 +39,13 @@ const $LocationsState = _$LocationsStateTearOff();
 mixin _$LocationsState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(@required List<Location> locationsList),
+    @required TResult data(List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(@required List<Location> locationsList),
+    TResult data(List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
@@ -115,7 +115,7 @@ class __$DataLocationsStateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DataLocationsState implements _DataLocationsState {
-  const _$_DataLocationsState(@required this.locationsList)
+  const _$_DataLocationsState(this.locationsList)
       : assert(locationsList != null);
 
   @override
@@ -147,7 +147,7 @@ class _$_DataLocationsState implements _DataLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(@required List<Location> locationsList),
+    @required TResult data(List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
@@ -160,7 +160,7 @@ class _$_DataLocationsState implements _DataLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(@required List<Location> locationsList),
+    TResult data(List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
@@ -202,7 +202,7 @@ class _$_DataLocationsState implements _DataLocationsState {
 }
 
 abstract class _DataLocationsState implements LocationsState {
-  const factory _DataLocationsState(@required List<Location> locationsList) =
+  const factory _DataLocationsState(List<Location> locationsList) =
       _$_DataLocationsState;
 
   List<Location> get locationsList;
@@ -249,7 +249,7 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(@required List<Location> locationsList),
+    @required TResult data(List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
@@ -262,7 +262,7 @@ class _$_InitialLocationsState implements _InitialLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(@required List<Location> locationsList),
+    TResult data(List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),
@@ -346,7 +346,7 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult data(@required List<Location> locationsList),
+    @required TResult data(List<Location> locationsList),
     @required TResult initial(),
     @required TResult loading(),
   }) {
@@ -359,7 +359,7 @@ class _$_LoadLocationsState implements _LoadLocationsState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult data(@required List<Location> locationsList),
+    TResult data(List<Location> locationsList),
     TResult initial(),
     TResult loading(),
     @required TResult orElse(),

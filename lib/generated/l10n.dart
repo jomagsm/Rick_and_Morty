@@ -235,11 +235,51 @@ class S {
     );
   }
 
-  /// `Включена`
+  /// `Выключенна`
+  String get off {
+    return Intl.message(
+      'Выключенна',
+      name: 'off',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Включенна`
   String get on {
     return Intl.message(
-      'Включена',
+      'Включенна',
       name: 'on',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Отмена`
+  String get cancel {
+    return Intl.message(
+      'Отмена',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Следовать настройкам системы`
+  String get settingsSystem {
+    return Intl.message(
+      'Следовать настройкам системы',
+      name: 'settingsSystem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `В режиме энергосбережения`
+  String get powerSavingMode {
+    return Intl.message(
+      'В режиме энергосбережения',
+      name: 'powerSavingMode',
       desc: '',
       args: [],
     );

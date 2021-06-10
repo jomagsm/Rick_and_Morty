@@ -9,6 +9,16 @@ class MyAppSettings {
 class DartThemes {
   static String name = 'Темная тема';
   static bool on = true;
+  static bool off = false;
   static bool settingsSystem = false;
   static bool powerSavingMode = false;
+}
+
+class DartThemes2 {
+  static String name = 'Темная тема';
+  static String selectValue = "on";
+  static String on = "on";
+  static String off = "off";
+  static String settingsSystem = 'settingsSystem';
+  static String powerSavingMode = 'powerSavingMode';
 }
