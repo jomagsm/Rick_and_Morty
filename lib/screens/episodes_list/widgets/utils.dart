@@ -17,9 +17,10 @@ List<Widget> getTabBarView(
 ) {
   List<Widget> children = [];
   for (var i in tabsName) {
-    GetTabBarView(
+    children.add(GetTabBarView(
       seasonId: i,
-    );
+    ));
   }
+  print(children);
   return children;
 }

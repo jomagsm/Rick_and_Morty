@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/episode_detail/screen.dart';
@@ -11,7 +12,6 @@ class GetTabBarView extends StatelessWidget {
   const GetTabBarView({Key key, @required this.seasonId}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    print(seasonId);
     return BlocProvider<EpisodesBloc>(
       create: (BuildContext context) =>
           EpisodesBloc()..add(EpisodesEvent.selectSeason(seasonId: seasonId)),
@@ -19,8 +19,8 @@ class GetTabBarView extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return state.maybeMap(
-              orElse: () => CircularProgressIndicator(),
-              loading: (_) => CircularProgressIndicator(),
+              orElse: () => customCircularProgress(),
+              loading: (_) => customCircularProgress(),
               data: (_data) => ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,

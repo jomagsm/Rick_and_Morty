@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/episode_detail/episode_bloc/episode_bloc.dart';
 import 'package:rick_and_morty/screens/episode_detail/widgets/episode_big_image.dart';
@@ -22,8 +23,8 @@ class EpisodeProfile extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return state.maybeMap(
-              orElse: () => CircularProgressIndicator(),
-              loadInProgress: (_) => CircularProgressIndicator(),
+              orElse: () => customCircularProgress(),
+              loadInProgress: (_) => customCircularProgress(),
               data: (_data) => Scaffold(
                   appBar: AppBar(
                       backgroundColor: Colors.transparent,

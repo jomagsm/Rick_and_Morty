@@ -120,8 +120,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Container(
                   padding: EdgeInsets.all(20),
-
-                  // height: 322,
                   child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,

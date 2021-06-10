@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/character_profile_content.dart';
 import 'package:rick_and_morty/screens/character_profile/widgets/charcter_profile_big_image.dart';
@@ -21,8 +22,8 @@ class CharacterProfile extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             return state.maybeMap(
-                orElse: () => CircularProgressIndicator(),
-                loadInProgress: (_) => CircularProgressIndicator(),
+                orElse: () => customCircularProgress(),
+                loadInProgress: (_) => customCircularProgress(),
                 data: (_data) => Scaffold(
                       appBar: AppBar(
                           automaticallyImplyLeading: true,

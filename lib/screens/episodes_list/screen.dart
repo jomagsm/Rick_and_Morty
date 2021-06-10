@@ -4,7 +4,6 @@ import 'package:rick_and_morty/components/app_bar/search_text_field.dart';
 import 'package:rick_and_morty/components/circular_progress.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/screens/episodes_list/episodes_bloc/episodes_bloc.dart';
-import 'package:rick_and_morty/screens/episodes_list/widgets/episodes_list.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
@@ -35,12 +34,6 @@ class EpisodesList extends StatelessWidget {
                     bottom: PreferredSize(
                       preferredSize: Size.fromHeight(50),
                       child: TabBar(
-                        // onTap: (value) {
-                        //   print(value);
-                        //   context.read<EpisodesBloc>()
-                        //     ..add(EpisodesEvent.selectSeason(
-                        //         seasonId: value + 1));
-                        // },
                         indicatorColor:
                             ColorTheme.textAppearanceOverlineFullName,
                         labelStyle: TextThemes.tabBarLable,
@@ -52,20 +45,7 @@ class EpisodesList extends StatelessWidget {
                   ),
                   backgroundColor: ColorTheme.background,
                   body: SafeArea(
-                    child: TabBarView(children: [
-                      GetTabBarView(
-                        seasonId: 1,
-                      ),
-                      GetTabBarView(
-                        seasonId: 2,
-                      ),
-                      GetTabBarView(
-                        seasonId: 3,
-                      ),
-                      GetTabBarView(
-                        seasonId: 4,
-                      )
-                    ]),
+                    child: TabBarView(children: getTabBarView(_data.season)),
                   ),
                 ),
               ),
