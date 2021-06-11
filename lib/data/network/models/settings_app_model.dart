@@ -16,7 +16,7 @@ class DartThemes {
 
 class DartThemes2 {
   static String name = 'Темная тема';
-  static String selectValue = "on";
+  static String selectValue = "settingsSystem";
   static String on = "on";
   static String off = "off";
   static String settingsSystem = 'settingsSystem';

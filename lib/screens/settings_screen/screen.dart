@@ -9,6 +9,8 @@ import 'package:rick_and_morty/screens/settings_screen/widgets/utils.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
+import 'widgets/show_dialog.dart';
+
 class SettingsScreen extends StatefulWidget {
   SettingsScreen({Key key}) : super(key: key);
 
@@ -56,7 +58,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   style: TextThemes.profileEpisodeDate,
                 ),
                 trailing: InkWell(
-                  onTap: _showMaterialDialog,
+                  onTap: () {
+                    _showMaterialDialog();
+                  },
                   child: SvgPicture.asset(SvgIcons.arrowNext),
                 ),
               ),
@@ -97,83 +101,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   _showMaterialDialog() {
-    showDialog(
-        context: context,
-        builder: (_) => new Dialog(
-              insetPadding: EdgeInsets.all(16),
-              backgroundColor: ColorTheme.appBarBackground,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Container(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          DartThemes2.name,
-                          style: TextThemes.profileListTitle,
-                        ),
-                        ListTile(
-                          title: Text(S.of(context).off,
-                              style: TextThemes.choiceText),
-                          leading: Radio(
-                              value: DartThemes2.on,
-                              groupValue: themesValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  themesValue = value;
-                                });
-                              }),
-                        ),
-                        ListTile(
-                          title: Text(S.of(context).on,
-                              style: TextThemes.choiceText),
-                          leading: Radio(
-                              value: DartThemes2.off,
-                              groupValue: themesValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  themesValue = value;
-                                });
-                              }),
-                        ),
-                        ListTile(
-                          title: Text(S.of(context).settingsSystem,
-                              style: TextThemes.choiceText),
-                          leading: Radio(
-                              value: DartThemes2.settingsSystem,
-                              groupValue: themesValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  themesValue = value;
-                                });
-                              }),
-                        ),
-                        ListTile(
-                          title: Text(S.of(context).powerSavingMode,
-                              style: TextThemes.choiceText),
-                          leading: Radio(
-                              value: DartThemes2.powerSavingMode,
-                              groupValue: themesValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  themesValue = value;
-                                });
-                              }),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.pop(context, null);
-                              },
-                              child: Text(
-                                S.of(context).cancel.toUpperCase(),
-                                style: TextThemes.settingsChoiceButton,
-                              )),
-                        )
-                      ])),
-            ));
+    showDialog(context: context, builder: (_) => ShowDialog());
   }
 }
