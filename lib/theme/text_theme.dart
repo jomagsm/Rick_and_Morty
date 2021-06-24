@@ -156,8 +156,8 @@ class TextThemes {
       letterSpacing: 1.5);
 }
 
-getTextTheme(status) {
-  if (status.toLowerCase() == 'живой') {
+getTextTheme(int status) {
+  if (status == 1) {
     return TextThemes.characterStatus;
   } else {
     return TextThemes.characterStatusDead;

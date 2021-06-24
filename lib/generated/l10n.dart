@@ -294,6 +294,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Живой`
+  String get alive {
+    return Intl.message(
+      'Живой',
+      name: 'alive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Мертвый`
+  String get dead {
+    return Intl.message(
+      'Мертвый',
+      name: 'dead',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

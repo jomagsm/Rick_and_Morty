@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/characters_model.dart';
+import 'package:rick_and_morty/data/repository.dart';
 import 'package:rick_and_morty/global/global.dart';
 
 part 'characters_event.dart';
@@ -10,6 +12,8 @@ part 'characters_state.dart';
 part 'characters_bloc.freezed.dart';
 
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
+  final _repository = Repository();
+  CharactersModel characters;
   CharactersBloc() : super(CharactersState.initial());
   bool isGrid = false;
 
@@ -32,10 +36,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       _InitialCharactersEvent event) async* {
     /// Возвращаем состояние загрузки
     yield CharactersState.loading();
+    try {
+      characters = await _repository.getCharacters();
+    } catch (e) {}
 
     /// Возвращаем состояние с данными
     yield CharactersState.data(
-      characterList: globalcharactersList,
+      characterList: characters.data,
       isGrid: isGrid,
     );
   }
@@ -45,7 +52,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     yield CharactersState.loading();
     isGrid = !event.isGrid;
     yield CharactersState.data(
-      characterList: globalcharactersList,
+      characterList: characters.data,
       isGrid: isGrid,
     );
   }

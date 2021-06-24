@@ -23,10 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "aboutTheApp" : MessageLookupByLibrary.simpleMessage("О приложении"),
     "addBarHintTextFindEpisod" : MessageLookupByLibrary.simpleMessage("Найти эпизод"),
+    "alive" : MessageLookupByLibrary.simpleMessage("Живой"),
     "appBarHintText" : MessageLookupByLibrary.simpleMessage("Найти персонажа"),
     "appBarHintTextFindLocation" : MessageLookupByLibrary.simpleMessage("Найти локацию"),
     "apperance" : MessageLookupByLibrary.simpleMessage("Внешний вид"),
     "cancel" : MessageLookupByLibrary.simpleMessage("Отмена"),
+    "dead" : MessageLookupByLibrary.simpleMessage("Мертвый"),
     "gender" : MessageLookupByLibrary.simpleMessage("Пол"),
     "human" : MessageLookupByLibrary.simpleMessage("Человек"),
     "location" : MessageLookupByLibrary.simpleMessage("Местоположение"),

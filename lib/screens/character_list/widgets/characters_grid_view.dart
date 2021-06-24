@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/global/navigator.dart';
-import 'package:rick_and_morty/screens/character_profile/screen.dart';
+import 'package:rick_and_morty/screens/character_list/widgets/utils.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class CharactersGridView extends StatelessWidget {
@@ -19,41 +19,39 @@ class CharactersGridView extends StatelessWidget {
         itemBuilder: (_, index) {
           return InkWell(
             onTap: () {
-              Navigator.push(
-                  context,
-                  SlideRightRoute(
-                      page: CharacterProfile(id: charactersList[index].id)));
+              // Navigator.push(
+              //     context,
+              //     SlideRightRoute(
+              //         page: CharacterProfile(id: charactersList[index].id)));
             },
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  width: 120,
-                  height: 122,
-                  child: CircleAvatar(
+                    margin: EdgeInsets.only(bottom: 10),
+                    width: 120,
+                    height: 122,
+                    child: CircleAvatar(
+                      backgroundImage:
+                          NetworkImage(charactersList[index].imageName),
                       radius: 50,
-                      child: Image.asset(
-                        charactersList[index].avatar,
-                      )),
+                    )),
+                Text(
+                  "${getStatusText(charactersList[index].status).toUpperCase()}",
+                  style: getTextTheme(charactersList[index].status),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 18),
-                  height: 55,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(charactersList[index].status.toUpperCase(),
-                          style: getTextTheme(charactersList[index].status)),
-                      Text(
-                        "${charactersList[index].firstName} ${charactersList[index].lastName}",
-                        style: TextThemes.fullNameBigCard,
-                      ),
-                      Text(
-                        "${charactersList[index].race} ${charactersList[index].gender}",
-                        style: TextThemes.textAppearanceCaption,
-                      )
-                    ],
-                  ),
+                Text(
+                  "${charactersList[index].fullName}",
+                  style: TextThemes.fullNameBigCard,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
                 ),
+                Text(
+                  "${charactersList[index].race} ${getGenderText(charactersList[index].gender)}",
+                  style: TextThemes.textAppearanceCaption,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                )
               ],
             ),
           );

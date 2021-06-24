@@ -3,7 +3,7 @@ import 'package:rick_and_morty/theme/color_theme.dart';
 
 Widget customCircularProgress() {
   return Scaffold(
-    body: CircularProgressIndicator(),
+    body: Center(child: CircularProgressIndicator()),
     backgroundColor: ColorTheme.background,
   );
 }

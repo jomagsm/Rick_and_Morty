@@ -16,8 +16,8 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   MainScreenBloc() : super(MainScreenState.initial());
   List<Widget> tabs = [
     CharactersScreen(),
-    LocationList(),
-    EpisodesList(),
+    // LocationList(),
+    // EpisodesList(),
     SettingsScreen()
   ];
 
@@ -44,6 +44,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
       _SelectedViewMainScreenEvent event) async* {
     yield MainScreenState.loading();
     final currentIndex = event.currentIndex;
-    yield MainScreenState.data(currentWidget: tabs[currentIndex], currentIndex: currentIndex);
+    yield MainScreenState.data(
+        currentWidget: tabs[currentIndex], currentIndex: currentIndex);
   }
 }
