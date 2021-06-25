@@ -2,10 +2,9 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/data/network/models/character_model.dart';
-import 'package:rick_and_morty/data/network/models/characters_model.dart';
+import 'package:rick_and_morty/data/network/models/characters_list_model/character_model.dart';
+import 'package:rick_and_morty/data/network/models/characters_list_model/characters_model.dart';
 import 'package:rick_and_morty/data/repository.dart';
-import 'package:rick_and_morty/global/global.dart';
 
 part 'characters_event.dart';
 part 'characters_state.dart';
@@ -26,9 +25,11 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       initial: _mapInitialCharactersEvent,
 
       /// Стрим для инициализации
+
       selectedView: _mapSelectedViewCharactersEvent,
 
       /// Стрим для выбора темы
+      find: _mapFindCharactersEvent,
     );
   }
 
@@ -38,7 +39,9 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     yield CharactersState.loading();
     try {
       characters = await _repository.getCharacters();
-    } catch (e) {}
+    } catch (e) {
+      CharactersState.error(message: e.message.toString());
+    }
 
     /// Возвращаем состояние с данными
     yield CharactersState.data(
@@ -53,6 +56,17 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     isGrid = !event.isGrid;
     yield CharactersState.data(
       characterList: characters.data,
+      isGrid: isGrid,
+    );
+  }
+
+  Stream<CharactersState> _mapFindCharactersEvent(
+      _FindCharactersEvent event) async* {
+    /// Возвращаем состояние загрузки
+    yield CharactersState.loading();
+    List<Character> findCharactersList = characters.findCharacters(event.value);
+    yield CharactersState.data(
+      characterList: findCharactersList,
       isGrid: isGrid,
     );
   }

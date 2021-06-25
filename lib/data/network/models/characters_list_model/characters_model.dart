@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'character_model.dart';
 
 CharactersModel charactersModelFromJson(String str) =>
     CharactersModel.fromJson(json.decode(str));
@@ -40,4 +40,17 @@ class CharactersModel {
         "error": error,
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
       };
+
+  findCharacters(String value) {
+    List<Character> findCharactersList = [];
+    if (value == '') {
+      return data;
+    }
+    for (var i in data) {
+      if (i.fullName.trim().toLowerCase().indexOf(value.toLowerCase()) != -1) {
+        findCharactersList.add(i);
+      }
+    }
+    return findCharactersList;
+  }
 }

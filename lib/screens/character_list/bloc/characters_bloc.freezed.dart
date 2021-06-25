@@ -24,6 +24,13 @@ class _$CharactersEventTearOff {
       isGrid: isGrid,
     );
   }
+
+// ignore: unused_element
+  _FindCharactersEvent find({@required String value}) {
+    return _FindCharactersEvent(
+      value: value,
+    );
+  }
 }
 
 /// @nodoc
@@ -36,22 +43,26 @@ mixin _$CharactersEvent {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult selectedView(bool isGrid),
+    @required TResult find(String value),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult selectedView(bool isGrid),
+    TResult find(String value),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_InitialCharactersEvent value),
     @required TResult selectedView(_SelectedViewCharactersEvent value),
+    @required TResult find(_FindCharactersEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_InitialCharactersEvent value),
     TResult selectedView(_SelectedViewCharactersEvent value),
+    TResult find(_FindCharactersEvent value),
     @required TResult orElse(),
   });
 }
@@ -114,9 +125,11 @@ class _$_InitialCharactersEvent implements _InitialCharactersEvent {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult selectedView(bool isGrid),
+    @required TResult find(String value),
   }) {
     assert(initial != null);
     assert(selectedView != null);
+    assert(find != null);
     return initial();
   }
 
@@ -125,6 +138,7 @@ class _$_InitialCharactersEvent implements _InitialCharactersEvent {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult selectedView(bool isGrid),
+    TResult find(String value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -139,9 +153,11 @@ class _$_InitialCharactersEvent implements _InitialCharactersEvent {
   TResult map<TResult extends Object>({
     @required TResult initial(_InitialCharactersEvent value),
     @required TResult selectedView(_SelectedViewCharactersEvent value),
+    @required TResult find(_FindCharactersEvent value),
   }) {
     assert(initial != null);
     assert(selectedView != null);
+    assert(find != null);
     return initial(this);
   }
 
@@ -150,6 +166,7 @@ class _$_InitialCharactersEvent implements _InitialCharactersEvent {
   TResult maybeMap<TResult extends Object>({
     TResult initial(_InitialCharactersEvent value),
     TResult selectedView(_SelectedViewCharactersEvent value),
+    TResult find(_FindCharactersEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -232,9 +249,11 @@ class _$_SelectedViewCharactersEvent implements _SelectedViewCharactersEvent {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult selectedView(bool isGrid),
+    @required TResult find(String value),
   }) {
     assert(initial != null);
     assert(selectedView != null);
+    assert(find != null);
     return selectedView(isGrid);
   }
 
@@ -243,6 +262,7 @@ class _$_SelectedViewCharactersEvent implements _SelectedViewCharactersEvent {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult selectedView(bool isGrid),
+    TResult find(String value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -257,9 +277,11 @@ class _$_SelectedViewCharactersEvent implements _SelectedViewCharactersEvent {
   TResult map<TResult extends Object>({
     @required TResult initial(_InitialCharactersEvent value),
     @required TResult selectedView(_SelectedViewCharactersEvent value),
+    @required TResult find(_FindCharactersEvent value),
   }) {
     assert(initial != null);
     assert(selectedView != null);
+    assert(find != null);
     return selectedView(this);
   }
 
@@ -268,6 +290,7 @@ class _$_SelectedViewCharactersEvent implements _SelectedViewCharactersEvent {
   TResult maybeMap<TResult extends Object>({
     TResult initial(_InitialCharactersEvent value),
     TResult selectedView(_SelectedViewCharactersEvent value),
+    TResult find(_FindCharactersEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -286,6 +309,131 @@ abstract class _SelectedViewCharactersEvent implements CharactersEvent {
   @JsonKey(ignore: true)
   _$SelectedViewCharactersEventCopyWith<_SelectedViewCharactersEvent>
       get copyWith;
+}
+
+/// @nodoc
+abstract class _$FindCharactersEventCopyWith<$Res> {
+  factory _$FindCharactersEventCopyWith(_FindCharactersEvent value,
+          $Res Function(_FindCharactersEvent) then) =
+      __$FindCharactersEventCopyWithImpl<$Res>;
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$FindCharactersEventCopyWithImpl<$Res>
+    extends _$CharactersEventCopyWithImpl<$Res>
+    implements _$FindCharactersEventCopyWith<$Res> {
+  __$FindCharactersEventCopyWithImpl(
+      _FindCharactersEvent _value, $Res Function(_FindCharactersEvent) _then)
+      : super(_value, (v) => _then(v as _FindCharactersEvent));
+
+  @override
+  _FindCharactersEvent get _value => super._value as _FindCharactersEvent;
+
+  @override
+  $Res call({
+    Object value = freezed,
+  }) {
+    return _then(_FindCharactersEvent(
+      value: value == freezed ? _value.value : value as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FindCharactersEvent implements _FindCharactersEvent {
+  const _$_FindCharactersEvent({@required this.value}) : assert(value != null);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'CharactersEvent.find(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FindCharactersEvent &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FindCharactersEventCopyWith<_FindCharactersEvent> get copyWith =>
+      __$FindCharactersEventCopyWithImpl<_FindCharactersEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult selectedView(bool isGrid),
+    @required TResult find(String value),
+  }) {
+    assert(initial != null);
+    assert(selectedView != null);
+    assert(find != null);
+    return find(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult selectedView(bool isGrid),
+    TResult find(String value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (find != null) {
+      return find(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_InitialCharactersEvent value),
+    @required TResult selectedView(_SelectedViewCharactersEvent value),
+    @required TResult find(_FindCharactersEvent value),
+  }) {
+    assert(initial != null);
+    assert(selectedView != null);
+    assert(find != null);
+    return find(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_InitialCharactersEvent value),
+    TResult selectedView(_SelectedViewCharactersEvent value),
+    TResult find(_FindCharactersEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (find != null) {
+      return find(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FindCharactersEvent implements CharactersEvent {
+  const factory _FindCharactersEvent({@required String value}) =
+      _$_FindCharactersEvent;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$FindCharactersEventCopyWith<_FindCharactersEvent> get copyWith;
 }
 
 /// @nodoc
@@ -310,6 +458,22 @@ class _$CharactersStateTearOff {
   _LoadingCharactersState loading() {
     return const _LoadingCharactersState();
   }
+
+// ignore: unused_element
+  _ErrorCharactersState error({@required String message}) {
+    return _ErrorCharactersState(
+      message: message,
+    );
+  }
+
+// ignore: unused_element
+  _FindCharactersState find(
+      {@required List<Character> characterList, @required bool isGrid}) {
+    return _FindCharactersState(
+      characterList: characterList,
+      isGrid: isGrid,
+    );
+  }
 }
 
 /// @nodoc
@@ -323,12 +487,16 @@ mixin _$CharactersState {
     @required TResult data(List<Character> characterList, bool isGrid),
     @required TResult initial(),
     @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult data(List<Character> characterList, bool isGrid),
     TResult initial(),
     TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -336,12 +504,16 @@ mixin _$CharactersState {
     @required TResult data(_DataCharactersState value),
     @required TResult initial(_InitialCharactersState value),
     @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult data(_DataCharactersState value),
     TResult initial(_InitialCharactersState value),
     TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
     @required TResult orElse(),
   });
 }
@@ -444,10 +616,14 @@ class _$_DataCharactersState implements _DataCharactersState {
     @required TResult data(List<Character> characterList, bool isGrid),
     @required TResult initial(),
     @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return data(characterList, isGrid);
   }
 
@@ -457,6 +633,8 @@ class _$_DataCharactersState implements _DataCharactersState {
     TResult data(List<Character> characterList, bool isGrid),
     TResult initial(),
     TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -472,10 +650,14 @@ class _$_DataCharactersState implements _DataCharactersState {
     @required TResult data(_DataCharactersState value),
     @required TResult initial(_InitialCharactersState value),
     @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return data(this);
   }
 
@@ -485,6 +667,8 @@ class _$_DataCharactersState implements _DataCharactersState {
     TResult data(_DataCharactersState value),
     TResult initial(_InitialCharactersState value),
     TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -549,10 +733,14 @@ class _$_InitialCharactersState implements _InitialCharactersState {
     @required TResult data(List<Character> characterList, bool isGrid),
     @required TResult initial(),
     @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return initial();
   }
 
@@ -562,6 +750,8 @@ class _$_InitialCharactersState implements _InitialCharactersState {
     TResult data(List<Character> characterList, bool isGrid),
     TResult initial(),
     TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -577,10 +767,14 @@ class _$_InitialCharactersState implements _InitialCharactersState {
     @required TResult data(_DataCharactersState value),
     @required TResult initial(_InitialCharactersState value),
     @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return initial(this);
   }
 
@@ -590,6 +784,8 @@ class _$_InitialCharactersState implements _InitialCharactersState {
     TResult data(_DataCharactersState value),
     TResult initial(_InitialCharactersState value),
     TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -646,10 +842,14 @@ class _$_LoadingCharactersState implements _LoadingCharactersState {
     @required TResult data(List<Character> characterList, bool isGrid),
     @required TResult initial(),
     @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return loading();
   }
 
@@ -659,6 +859,8 @@ class _$_LoadingCharactersState implements _LoadingCharactersState {
     TResult data(List<Character> characterList, bool isGrid),
     TResult initial(),
     TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -674,10 +876,14 @@ class _$_LoadingCharactersState implements _LoadingCharactersState {
     @required TResult data(_DataCharactersState value),
     @required TResult initial(_InitialCharactersState value),
     @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
   }) {
     assert(data != null);
     assert(initial != null);
     assert(loading != null);
+    assert(error != null);
+    assert(find != null);
     return loading(this);
   }
 
@@ -687,6 +893,8 @@ class _$_LoadingCharactersState implements _LoadingCharactersState {
     TResult data(_DataCharactersState value),
     TResult initial(_InitialCharactersState value),
     TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -699,4 +907,298 @@ class _$_LoadingCharactersState implements _LoadingCharactersState {
 
 abstract class _LoadingCharactersState implements CharactersState {
   const factory _LoadingCharactersState() = _$_LoadingCharactersState;
+}
+
+/// @nodoc
+abstract class _$ErrorCharactersStateCopyWith<$Res> {
+  factory _$ErrorCharactersStateCopyWith(_ErrorCharactersState value,
+          $Res Function(_ErrorCharactersState) then) =
+      __$ErrorCharactersStateCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$ErrorCharactersStateCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res>
+    implements _$ErrorCharactersStateCopyWith<$Res> {
+  __$ErrorCharactersStateCopyWithImpl(
+      _ErrorCharactersState _value, $Res Function(_ErrorCharactersState) _then)
+      : super(_value, (v) => _then(v as _ErrorCharactersState));
+
+  @override
+  _ErrorCharactersState get _value => super._value as _ErrorCharactersState;
+
+  @override
+  $Res call({
+    Object message = freezed,
+  }) {
+    return _then(_ErrorCharactersState(
+      message: message == freezed ? _value.message : message as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ErrorCharactersState implements _ErrorCharactersState {
+  const _$_ErrorCharactersState({@required this.message})
+      : assert(message != null);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'CharactersState.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ErrorCharactersState &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ErrorCharactersStateCopyWith<_ErrorCharactersState> get copyWith =>
+      __$ErrorCharactersStateCopyWithImpl<_ErrorCharactersState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult data(List<Character> characterList, bool isGrid),
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
+  }) {
+    assert(data != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    assert(find != null);
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult data(List<Character> characterList, bool isGrid),
+    TResult initial(),
+    TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult data(_DataCharactersState value),
+    @required TResult initial(_InitialCharactersState value),
+    @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
+  }) {
+    assert(data != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    assert(find != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult data(_DataCharactersState value),
+    TResult initial(_InitialCharactersState value),
+    TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorCharactersState implements CharactersState {
+  const factory _ErrorCharactersState({@required String message}) =
+      _$_ErrorCharactersState;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$ErrorCharactersStateCopyWith<_ErrorCharactersState> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FindCharactersStateCopyWith<$Res> {
+  factory _$FindCharactersStateCopyWith(_FindCharactersState value,
+          $Res Function(_FindCharactersState) then) =
+      __$FindCharactersStateCopyWithImpl<$Res>;
+  $Res call({List<Character> characterList, bool isGrid});
+}
+
+/// @nodoc
+class __$FindCharactersStateCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res>
+    implements _$FindCharactersStateCopyWith<$Res> {
+  __$FindCharactersStateCopyWithImpl(
+      _FindCharactersState _value, $Res Function(_FindCharactersState) _then)
+      : super(_value, (v) => _then(v as _FindCharactersState));
+
+  @override
+  _FindCharactersState get _value => super._value as _FindCharactersState;
+
+  @override
+  $Res call({
+    Object characterList = freezed,
+    Object isGrid = freezed,
+  }) {
+    return _then(_FindCharactersState(
+      characterList: characterList == freezed
+          ? _value.characterList
+          : characterList as List<Character>,
+      isGrid: isGrid == freezed ? _value.isGrid : isGrid as bool,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FindCharactersState implements _FindCharactersState {
+  const _$_FindCharactersState(
+      {@required this.characterList, @required this.isGrid})
+      : assert(characterList != null),
+        assert(isGrid != null);
+
+  @override
+
+  /// Параметры
+  final List<Character> characterList;
+  @override
+  final bool isGrid;
+
+  @override
+  String toString() {
+    return 'CharactersState.find(characterList: $characterList, isGrid: $isGrid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FindCharactersState &&
+            (identical(other.characterList, characterList) ||
+                const DeepCollectionEquality()
+                    .equals(other.characterList, characterList)) &&
+            (identical(other.isGrid, isGrid) ||
+                const DeepCollectionEquality().equals(other.isGrid, isGrid)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(characterList) ^
+      const DeepCollectionEquality().hash(isGrid);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FindCharactersStateCopyWith<_FindCharactersState> get copyWith =>
+      __$FindCharactersStateCopyWithImpl<_FindCharactersState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult data(List<Character> characterList, bool isGrid),
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(String message),
+    @required TResult find(List<Character> characterList, bool isGrid),
+  }) {
+    assert(data != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    assert(find != null);
+    return find(characterList, isGrid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult data(List<Character> characterList, bool isGrid),
+    TResult initial(),
+    TResult loading(),
+    TResult error(String message),
+    TResult find(List<Character> characterList, bool isGrid),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (find != null) {
+      return find(characterList, isGrid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult data(_DataCharactersState value),
+    @required TResult initial(_InitialCharactersState value),
+    @required TResult loading(_LoadingCharactersState value),
+    @required TResult error(_ErrorCharactersState value),
+    @required TResult find(_FindCharactersState value),
+  }) {
+    assert(data != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    assert(find != null);
+    return find(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult data(_DataCharactersState value),
+    TResult initial(_InitialCharactersState value),
+    TResult loading(_LoadingCharactersState value),
+    TResult error(_ErrorCharactersState value),
+    TResult find(_FindCharactersState value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (find != null) {
+      return find(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FindCharactersState implements CharactersState {
+  const factory _FindCharactersState(
+      {@required List<Character> characterList,
+      @required bool isGrid}) = _$_FindCharactersState;
+
+  /// Параметры
+  List<Character> get characterList;
+  bool get isGrid;
+  @JsonKey(ignore: true)
+  _$FindCharactersStateCopyWith<_FindCharactersState> get copyWith;
 }

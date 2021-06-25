@@ -14,4 +14,7 @@ abstract class CharactersState with _$CharactersState {
 
   /// Состояние отображения этапа загрузки
   const factory CharactersState.loading() = _LoadingCharactersState;
+
+  const factory CharactersState.error({@required String message}) =
+      _ErrorCharactersState;
 }

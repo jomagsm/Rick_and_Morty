@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/global/global.dart';
 import 'package:rick_and_morty/resources/svg_icons.dart';
+import 'package:rick_and_morty/screens/character_list/bloc/characters_bloc.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class SearchTextField extends StatelessWidget {
+  // final Function onChangedFunction;
   final String title;
-  const SearchTextField(this.title);
+  SearchTextField(this.title);
+  final TextEditingController _controller = TextEditingController();
+  String findValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: FindBarValue.charactersFind,
+      onChanged: (value) {
+        FindBarValue.charactersFind = value;
+        // context.read()<CharactersBloc>()
+        //   ..add(CharactersEvent.find(value: FindBarValue.charactersFind));
+        BlocProvider.of<CharactersBloc>(context)
+            .add(CharactersEvent.find(value: FindBarValue.charactersFind));
+        // context.read<CharactersBloc>()..add(CharactersEvent.find(value: value));
+      },
       style: TextThemes.hintTextFindBar,
-      controller: TextEditingController(),
+      // controller: _controller,
       focusNode: FocusNode(),
       decoration: InputDecoration(
           border: OutlineInputBorder(

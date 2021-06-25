@@ -18,7 +18,14 @@ class CharactersScreen extends StatelessWidget {
         create: (BuildContext context) =>
             CharactersBloc()..add(CharactersEvent.initial()),
         child: BlocConsumer<CharactersBloc, CharactersState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            state.maybeWhen(
+                error: (_error) => {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(_error.toString())))
+                    },
+                orElse: () {});
+          },
           builder: (context, state) {
             return state.maybeMap(
               orElse: () => customCircularProgress(),
@@ -28,7 +35,15 @@ class CharactersScreen extends StatelessWidget {
                   backgroundColor: ColorTheme.background,
                   elevation: 0,
                   automaticallyImplyLeading: false,
-                  title: SearchTextField(S.of(context).appBarHintText),
+                  title: BlocProvider.value(
+                    value: BlocProvider.of<CharactersBloc>(context),
+                    child: SearchTextField(S.of(context).appBarHintText),
+                  ),
+
+                  // SearchTextField(S.of(context).appBarHintText, (value) {
+                  //   context.read<CharactersBloc>()
+                  //     ..add(CharactersEvent.find(value: value));
+                  // }),
                   bottom: PreferredSize(
                       preferredSize: Size.fromHeight(50),
                       child: TotalCharactersContainer(

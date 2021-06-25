@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:rick_and_morty/data/network/dio_settings.dart';
-import 'package:rick_and_morty/data/network/models/characters_model.dart';
+import 'package:rick_and_morty/data/network/models/character_response_model.dart';
+
+import 'models/characters_list_model/character_model.dart';
+import 'models/characters_list_model/characters_model.dart';
 
 class ServiceApi {
   DioSettings _dioSettings;
@@ -16,8 +19,22 @@ class ServiceApi {
   }
 
   Future<CharactersModel> getCharacters() async {
-    Response<String> response = await _dio.get("/api/Characters/GetAll",
-        queryParameters: {"PageNumber": 1, "PageSize": 200});
-    return charactersModelFromJson(response.toString());
+    try {
+      Response<String> response = await _dio.get("/api/Characters/GetAll",
+          queryParameters: {"PageNumber": 1, "PageSize": 200});
+      return charactersModelFromJson(response.toString());
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<Character> getCharacter(id) async {
+    try {
+      Response<String> response = await _dio
+          .get("/api/Characters/GetById", queryParameters: {"id": id});
+      return characterResponseModelFromJson(response.toString()).data;
+    } catch (e) {
+      throw e;
+    }
   }
 }

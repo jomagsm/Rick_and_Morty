@@ -9,4 +9,8 @@ abstract class CharactersEvent with _$CharactersEvent {
   const factory CharactersEvent.selectedView({
     @required bool isGrid,
   }) = _SelectedViewCharactersEvent;
+
+  const factory CharactersEvent.find({
+    @required String value,
+  }) = _FindCharactersEvent;
 }

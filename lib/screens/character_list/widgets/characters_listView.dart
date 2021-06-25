@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:rick_and_morty/data/network/models/characters_list_model/character_model.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/character_list/widgets/utils.dart';
 import 'package:rick_and_morty/screens/character_profile/screen.dart';
@@ -21,10 +21,10 @@ class CharactersListView extends StatelessWidget {
           margin: EdgeInsets.only(top: 24, left: 16),
           child: InkWell(
             onTap: () {
-              // Navigator.push(
-              //     context,
-              //     SlideRightRoute(
-              //         page: CharacterProfile(id: charactersList[index].id)));
+              Navigator.push(
+                  context,
+                  SlideRightRoute(
+                      page: CharacterProfile(id: charactersList[index].id)));
             },
             child: Row(
               children: [

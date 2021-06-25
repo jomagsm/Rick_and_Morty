@@ -1,22 +1,20 @@
-// import 'package:flutter/material.dart';
-// import 'package:rick_and_morty/data/network/models/character_model.dart';
+import 'package:flutter/material.dart';
+import 'package:rick_and_morty/data/network/models/characters_list_model/character_model.dart';
 
-// class BigImagePosition extends StatelessWidget {
-//   final Character character;
-//   const BigImagePosition({Key key, @required this.character}) : super(key: key);
+class BigImagePosition extends StatelessWidget {
+  final Character character;
+  const BigImagePosition({Key key, @required this.character}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Positioned(
-//       top: -100,
-//       left: -35,
-//       child: Container(
-//         height: MediaQuery.of(context).size.height / 1.8,
-//         child: Image.asset(
-//           character.avatar,
-//           fit: BoxFit.cover,
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Image.network(
+          character.imageName,
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}

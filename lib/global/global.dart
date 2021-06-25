@@ -9,3 +9,7 @@
 // Object globalCharacter = getCharacter(globalcharactersList, 1);
 // List globalEpisodeList = createFixturesEpisode();
 // List globalLocationList = createLocations();
+
+class FindBarValue {
+  static String charactersFind;
+}

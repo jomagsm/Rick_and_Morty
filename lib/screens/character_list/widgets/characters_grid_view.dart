@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/global/navigator.dart';
 import 'package:rick_and_morty/screens/character_list/widgets/utils.dart';
+import 'package:rick_and_morty/screens/character_profile/screen.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
 class CharactersGridView extends StatelessWidget {
@@ -19,10 +20,10 @@ class CharactersGridView extends StatelessWidget {
         itemBuilder: (_, index) {
           return InkWell(
             onTap: () {
-              // Navigator.push(
-              //     context,
-              //     SlideRightRoute(
-              //         page: CharacterProfile(id: charactersList[index].id)));
+              Navigator.push(
+                  context,
+                  SlideRightRoute(
+                      page: CharacterProfile(id: charactersList[index].id)));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
