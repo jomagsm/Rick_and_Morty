@@ -40,7 +40,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     try {
       characters = await _repository.getCharacters();
     } catch (e) {
-      CharactersState.error(message: e.message.toString());
+      yield CharactersState.error(message: e.message.toString());
     }
 
     /// Возвращаем состояние с данными

@@ -30,6 +30,21 @@ class CharactersScreen extends StatelessWidget {
             return state.maybeMap(
               orElse: () => customCircularProgress(),
               loading: (_) => customCircularProgress(),
+              error: (error) => Scaffold(
+                body: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(),
+                    Text(error.message),
+                    ElevatedButton(
+                        onPressed: () {
+                          context.read<CharactersBloc>()
+                            ..add(CharactersEvent.initial());
+                        },
+                        child: Text(S.of(context).repeat))
+                  ],
+                ),
+              ),
               data: (_data) => Scaffold(
                 appBar: AppBar(
                   backgroundColor: ColorTheme.background,

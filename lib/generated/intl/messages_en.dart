@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "powerSavingMode" : MessageLookupByLibrary.simpleMessage("В режиме энергосбережения"),
     "premiere" : MessageLookupByLibrary.simpleMessage("Премьера"),
     "race" : MessageLookupByLibrary.simpleMessage("Расса"),
+    "repeat" : MessageLookupByLibrary.simpleMessage("Повторить"),
     "season" : MessageLookupByLibrary.simpleMessage("Сезон"),
     "seria" : MessageLookupByLibrary.simpleMessage("Серия"),
     "settings" : MessageLookupByLibrary.simpleMessage("Настройки"),

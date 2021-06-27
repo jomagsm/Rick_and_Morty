@@ -7,8 +7,12 @@ class Repository {
   final _serviceApi = ServiceApi();
   // Получение списка персонажей
   Future<CharactersModel> getCharacters() async {
-    final response = await _serviceApi.getCharacters();
-    return response;
+    try {
+      final response = await _serviceApi.getCharacters();
+      return response;
+    } catch (e) {
+      throw (e);
+    }
   }
 
   // Получение персонажa
