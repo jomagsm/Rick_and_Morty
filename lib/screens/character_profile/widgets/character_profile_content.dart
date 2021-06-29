@@ -6,6 +6,8 @@ import 'package:rick_and_morty/screens/character_profile/widgets/utils.dart';
 import 'package:rick_and_morty/theme/color_theme.dart';
 import 'package:rick_and_morty/theme/text_theme.dart';
 
+import 'episode_list_view.dart';
+
 class CharacterProfileContent extends StatelessWidget {
   final Character character;
   const CharacterProfileContent({Key key, @required this.character})
@@ -55,17 +57,13 @@ class CharacterProfileContent extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            // getRowTitleContent(S.of(context).place, "${character.}", () {
-            // Navigator.push(context,
-            //     SlideRightRoute(page: LocationDetail(id: location.id)));
-            // }),
-            const SizedBox(
-              height: 24,
-            ),
-            // getRowTitleContent(S.of(context).location, location.name, () {
-            //   Navigator.push(context,
-            //       SlideRightRoute(page: LocationDetail(id: location.id)));
-            // }),
+            character.placeOfBirth.name == null
+                ? SizedBox()
+                : getRowTitleContent(
+                    S.of(context).place, "${character.placeOfBirth.name}", () {
+                    // Navigator.push(context,
+                    //     SlideRightRoute(page: LocationDetail(id: location.id)));
+                  }),
             const SizedBox(
               height: 36,
             ),
@@ -88,9 +86,9 @@ class CharacterProfileContent extends StatelessWidget {
                 )
               ],
             ),
-            // EpisodeListView(
-            //   episodes: episodes,
-            // ),
+            EpisodeListView(
+              episodes: character.sortedEpisode(),
+            ),
           ],
         ),
       ),

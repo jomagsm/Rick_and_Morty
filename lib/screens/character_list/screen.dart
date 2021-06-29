@@ -19,12 +19,7 @@ class CharactersScreen extends StatelessWidget {
             CharactersBloc()..add(CharactersEvent.initial()),
         child: BlocConsumer<CharactersBloc, CharactersState>(
           listener: (context, state) {
-            state.maybeWhen(
-                error: (_error) => {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(_error.toString())))
-                    },
-                orElse: () {});
+            state.maybeWhen(error: (_error) => {}, orElse: () {});
           },
           builder: (context, state) {
             return state.maybeMap(

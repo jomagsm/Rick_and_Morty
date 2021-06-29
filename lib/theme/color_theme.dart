@@ -6,6 +6,7 @@ class ColorTheme {
   static var appBarText = Color(0xFF5B6975);
   static var totalCharacters = Color(0xFF5B6975);
   static var textAppearanceOverline = Color(0xFF43D049);
+  static var textAppearanceOverlineUnknow = Colors.yellow;
   static var textAppearanceOverlineDead = Color(0xFFEB5757);
   static var textAppearanceOverlineFullName = Color(0xFFFFFFFF);
   static var textAppearanceCaption = Color(0xFF6E798C);

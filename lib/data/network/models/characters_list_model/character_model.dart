@@ -34,27 +34,26 @@ class Character {
   String race;
   String imageName;
   String placeOfBirthId;
-  PlaceOfBirth placeOfBirth;
   List<Episode> episodes;
+  PlaceOfBirth placeOfBirth;
 
   factory Character.fromJson(Map<String, dynamic> json) => Character(
-        id: json["id"],
-        firstName: json["firstName"],
-        lastName: json["lastName"] == null ? null : json["lastName"],
-        fullName: json["fullName"],
-        status: json["status"],
-        about: json["about"],
-        gender: json["gender"],
-        race: json["race"],
-        imageName: json["imageName"],
-        placeOfBirthId:
-            json["placeOfBirthId"] == null ? null : json["placeOfBirthId"],
-        placeOfBirth: json["placeOfBirth"] == null
-            ? null
-            : placeOfBirthValues.map[json["placeOfBirth"]],
-        episodes: List<Episode>.from(
-            json["episodes"].map((x) => Episode.fromJson(x))),
-      );
+      id: json["id"],
+      firstName: json["firstName"],
+      lastName: json["lastName"] == null ? null : json["lastName"],
+      fullName: json["fullName"],
+      status: json["status"],
+      about: json["about"],
+      gender: json["gender"],
+      race: json["race"],
+      imageName: json["imageName"],
+      placeOfBirthId:
+          json["placeOfBirthId"] == null ? null : json["placeOfBirthId"],
+      placeOfBirth: json["placeOfBirth"] == null
+          ? null
+          : distributePlaceOfBirthClass(json),
+      episodes:
+          List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))));
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -67,9 +66,11 @@ class Character {
         "race": race,
         "imageName": imageName,
         "placeOfBirthId": placeOfBirthId == null ? null : placeOfBirthId,
-        "placeOfBirth": placeOfBirth == null
-            ? null
-            : placeOfBirthValues.reverse[placeOfBirth],
+        "placeOfBirth": placeOfBirth == null ? null : placeOfBirth,
         "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
       };
+  List<Episode> sortedEpisode() {
+    episodes.sort((a, b) => a.premiere.compareTo(b.premiere));
+    return episodes;
+  }
 }

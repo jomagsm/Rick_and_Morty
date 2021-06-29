@@ -27,6 +27,13 @@ class TextThemes {
       color: ColorTheme.textAppearanceOverline,
       letterSpacing: 1.5);
 
+  static var characterStatusUnknow = TextStyle(
+      fontSize: 10,
+      height: getTextHeight(10, 16),
+      fontWeight: FontWeight.w500,
+      color: ColorTheme.textAppearanceOverlineUnknow,
+      letterSpacing: 1.5);
+
   static var characterStatusDead = TextStyle(
       fontSize: 10,
       height: getTextHeight(10, 16),
@@ -157,8 +164,10 @@ class TextThemes {
 }
 
 getTextTheme(int status) {
-  if (status == 1) {
+  if (status == 0) {
     return TextThemes.characterStatus;
+  } else if (status == 2) {
+    return TextThemes.characterStatusUnknow;
   } else {
     return TextThemes.characterStatusDead;
   }
