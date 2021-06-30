@@ -59,10 +59,7 @@ class CharacterProfileContent extends StatelessWidget {
             ),
             character.placeOfBirth == null
                 ? getRowTitleContent(
-                    S.of(context).place, "${S.of(context).unknow}", () {
-                    // Navigator.push(context,
-                    //     SlideRightRoute(page: LocationDetail(id: location.id)));
-                  })
+                    S.of(context).place, "${S.of(context).unknow}", () {})
                 : getRowTitleContent(
                     S.of(context).place, "${character.placeOfBirth.name}", () {
                     // Navigator.push(context,
