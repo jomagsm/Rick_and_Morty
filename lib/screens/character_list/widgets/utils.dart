@@ -15,7 +15,7 @@ getGenderText(int gender) {
   if (gender == 0) {
     genderText = 'Мужской';
   } else if (gender == 2) {
-    genderText = 'Неизвестно';
+    genderText = 'Бесполый';
   } else {
     genderText = 'Женский';
   }
