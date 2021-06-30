@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textAppearanceCaptionLocation" : MessageLookupByLibrary.simpleMessage("Локации"),
     "totalCharacters" : MessageLookupByLibrary.simpleMessage("Всего персонажей:"),
     "totalLocations" : MessageLookupByLibrary.simpleMessage("Всего локаций:"),
+    "unknow" : MessageLookupByLibrary.simpleMessage("Неизвестно"),
     "versionApp" : MessageLookupByLibrary.simpleMessage("Версия приложения")
   };
 }

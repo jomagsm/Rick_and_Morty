@@ -324,6 +324,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Неизвестно`
+  String get unknow {
+    return Intl.message(
+      'Неизвестно',
+      name: 'unknow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

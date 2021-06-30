@@ -57,8 +57,12 @@ class CharacterProfileContent extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            character.placeOfBirth.name == null
-                ? SizedBox()
+            character.placeOfBirth == null
+                ? getRowTitleContent(
+                    S.of(context).place, "${S.of(context).unknow}", () {
+                    // Navigator.push(context,
+                    //     SlideRightRoute(page: LocationDetail(id: location.id)));
+                  })
                 : getRowTitleContent(
                     S.of(context).place, "${character.placeOfBirth.name}", () {
                     // Navigator.push(context,

@@ -9,6 +9,7 @@ class BigImagePosition extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       child: Container(
+        height: MediaQuery.of(context).size.height / 2.5,
         width: MediaQuery.of(context).size.width,
         child: Image.network(
           character.imageName,
